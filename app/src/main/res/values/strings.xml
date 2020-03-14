@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Project_Elephas</string>
+    <string name="payment">PAYMENT</string>
+    <string name="include_your_payment_details_here">Include Your Payment Details Here</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="nic">NIC</string>
+    <string name="card_no">Card No</string>
+    <string name="amount">Amount</string>
+    <string name="pay">Pay</string>
 </resources>

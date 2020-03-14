@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Payment">
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAYMENT"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorText"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/textTitile001"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Include Your Payment Details Here"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Name"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorText"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/namePay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/addressPay"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="Address"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:id="@+id/payNic"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="NIC"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:layout_marginTop="10dp"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:id="@+id/pay_status"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="CardNo"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:layout_marginTop="10dp"
+                android:digits="0123456789"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"/>
+
+            <EditText
+                android:id="@+id/payAmounts"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="Amount"
+                android:digits="0123456789."
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"/>
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Pay"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorBackground"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
