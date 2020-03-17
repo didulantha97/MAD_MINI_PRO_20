@@ -11,12 +11,12 @@
         android:id="@+id/textView25"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PAYMENT"
-        android:textColor="@color/colorText"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:text="PAYMENT"
+        android:textColor="@color/colorBackground"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="23dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorAccent"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -139,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Refund"
+                    android:backgroundTint="@color/colorAccent"
                     android:textColor="@color/colorBackground"
                     android:textStyle="bold" />
 

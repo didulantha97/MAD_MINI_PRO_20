@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.Activity_manage_cost"></activity>
+        <activity android:name=".activities.Activity_man_cost" />
+        <activity android:name=".activities.Activity_transport" />
+        <activity android:name=".activities.all_customer_payments" />
         <activity
             android:name=".CustomerViewListOfReqActivity"
             android:label="@string/title_activity_customer_view_list_of_req"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".CustomerReqGatheringActivity" />
         <activity android:name=".AfterLoginCustomerActivity" />

@@ -135,4 +135,24 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="txtListOfRequirement">List of Requirements</string>
+    <string name="diver_guide_cost"><![CDATA[Diver & Guide Cost]]></string>
+    <string name="additional_costs">Additional Costs</string>
+    <string name="transportation_cost">Transportation Cost</string>
+    <string name="payament_invoice">Payament Invoice</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="manage_payments">Manage Payments</string>
+    <string name="tours">Tours</string>
+    <string name="gross_millege">Gross Millege</string>
+    <string name="extra_mileage">Extra Mileage</string>
+    <string name="total_mileage">Total Mileage</string>
+    <string name="charge_per_km_lkr">Charge per Km LKR</string>
+    <string name="total_cost_in_usd">Total cost in USD</string>
+    <string name="driver_guide_costs"><![CDATA[Driver & Guide Costs]]></string>
+    <string name="drivers_bata_lkr">Drivers Bata LKR</string>
+    <string name="guide_fee_lkr">Guide Fee LKR</string>
+    <string name="total_in_lkr">Total in LKR</string>
+    <string name="total_in_usd">Total in USD</string>
+    <string name="transport_cost">Transport Cost</string>
+    <string name="transport_cost_management">Transport Cost Management</string>
+    <string name="driver_guide_cost_management"><![CDATA[Driver & Guide cost Management]]></string>
 </resources>
