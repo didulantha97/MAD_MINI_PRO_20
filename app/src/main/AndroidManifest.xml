@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CutomerRequirementUpdateDeleteActivity" />
         <activity
             android:name=".CustomerViewListOfReqActivity"
             android:label="@string/title_activity_customer_view_list_of_req"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".CustomerReqGatheringActivity" />
         <activity android:name=".AfterLoginCustomerActivity" />

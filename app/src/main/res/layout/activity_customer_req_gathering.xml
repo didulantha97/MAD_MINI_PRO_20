@@ -147,7 +147,6 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="redirectToAfterLoginCustomerActivity"
         android:text="@string/txtCancel"
         app:backgroundTint="@color/design_default_color_secondary_variant"
         app:layout_constraintBottom_toBottomOf="parent"

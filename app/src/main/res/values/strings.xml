@@ -24,7 +24,6 @@
     <string name="txtCompletedTours">Completed Tours</string>
     <string name="txtViewCustomerRequirements">View Customer Requirements</string>
     <string name="txtCustomerRequirements">Customer Requirements</string>
-    <string name="txtName">Name</string>
     <string name="txtArrivalDate">Arrival Date</string>
     <string name="txtDepartureDate">Departure Date</string>
     <string name="txtNationality">Nationality</string>
@@ -135,4 +134,7 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="txtListOfRequirement">List of Requirements</string>
+    <string name="txtName">Name</string>
+    <string name="txtUpdate">Update</string>
+    <string name="txtDelete">Delete</string>
 </resources>
