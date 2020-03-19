@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/dulbut13"
         android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/dulbut13" />
 
     <TextView
         android:id="@+id/textView10"
@@ -57,7 +57,7 @@
         android:gravity="center"
         android:text="@string/txtManageToursText"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintBottom_toTopOf="@+id/dubut11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,14 +71,14 @@
         android:text="@string/txtSightSeeingCostManagement"
         android:textColor="@android:color/background_light"
         app:backgroundTint="@color/colorAccentDark"
-        app:layout_constraintBottom_toTopOf="@+id/button13"
+        app:layout_constraintBottom_toTopOf="@+id/dulbut13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/dubut11" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/dubut11"
         android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
