@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
         //should check here if the user is an admin or a customer
         //if user = admin then go to AfterLoginActivityAdminView
         //else user = customer then go to AfterLoginCustomerActivity
-        Intent intent = new Intent(this,AfterLoginCustomerActivity.class);
+        Intent intent = new Intent(this,AfterLoginActivityAdminView.class);
         EditText editTextForUsername = findViewById(R.id.editText);
         EditText editTextForPassword = findViewById(R.id.editText2);
         String username = editTextForUsername.getText().toString();

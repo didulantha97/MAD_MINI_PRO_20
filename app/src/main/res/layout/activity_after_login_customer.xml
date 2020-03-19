@@ -14,14 +14,14 @@
         android:text="@string/txtHello"
         android:textSize="18sp"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/dubut2"
+        app:layout_constraintEnd_toEndOf="@+id/dubut2"
         app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/dubut2"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/dubut3"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/dubut2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/dubut2"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -45,10 +45,10 @@
         android:text="@string/txtEnterRequirements"
         android:textColor="@android:color/background_light"
         app:backgroundTint="@color/design_default_color_secondary_variant"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/dubut3"
+        app:layout_constraintEnd_toEndOf="@+id/dubut3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/dubut3"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView

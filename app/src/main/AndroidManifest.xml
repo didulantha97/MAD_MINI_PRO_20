@@ -9,10 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".other_packages"></activity>
+        <activity android:name=".other_cost_details" />
+        <activity android:name=".sight_seen_rules" />
+        <activity android:name=".sight_seen_basic_rule2" />
+        <activity android:name=".sight_seen_basic_rule" />
+        <activity android:name=".sight_seen_details_page" />
+        <activity android:name=".add_new_sight" />
+        <activity android:name=".sightseen" />
+        <activity android:name=".Main_Activity_Dula" />
         <activity
             android:name=".CustomerViewListOfReqActivity"
             android:label="@string/title_activity_customer_view_list_of_req"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".CustomerReqGatheringActivity" />
         <activity android:name=".AfterLoginCustomerActivity" />
