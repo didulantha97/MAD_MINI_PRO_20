@@ -3,6 +3,7 @@ package com.sliit.project_elephas;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -44,6 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // insert data
     public boolean insertData(String name,String nationality,String noofpeople,String arrivaldata,String departuredate,String noofdays,String starcategory,String remarks) {
         SQLiteDatabase db =  this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -65,13 +67,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    //view data
+    // view data
     public Cursor getAllData() {
         SQLiteDatabase db =  this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
         return res;
     }
 
+    // update data
     public boolean updateData(String id,String name,String nationality,String noofpeople,String arrivaldata,String departuredate,String noofdays,String starcategory,String remarks) {
         SQLiteDatabase db =  this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -83,8 +86,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL7,noofdays);
         contentValues.put(COL8,starcategory);
         contentValues.put(COL9,remarks);
-        long result =  db.insert(TABLE_NAME,null,contentValues);
+        db.update(TABLE_NAME,contentValues,COL1 + "=?", new String[] { id });
 
-        return result != -1;
+        return true;
+    }
+
+
+    // delete data
+    public Integer deleteData (String id) {
+        SQLiteDatabase db =  this.getWritableDatabase();
+        return db.delete(TABLE_NAME,COL1+"=?",new String[]{id});
     }
 }

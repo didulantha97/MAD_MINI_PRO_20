@@ -137,4 +137,5 @@
     <string name="txtName">Name</string>
     <string name="txtUpdate">Update</string>
     <string name="txtDelete">Delete</string>
+    <string name="txtID">ID :</string>
 </resources>

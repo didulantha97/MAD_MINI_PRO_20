@@ -53,6 +53,8 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
 
     }
 
+    /*
+    //these methods will not be useful because it is used in cusReqUpdateDeleteActivity
     public void DeleteData() {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +65,7 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
 
     }
 
+ //these methods will not be useful because it is used in cusReqUpdateDeleteActivity
     public void UpdateData(String CustomerRequirementID) {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +74,7 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
             }
         });
     }
+    */
 
     public void AddData () {
         //when save button triggers this method will run
