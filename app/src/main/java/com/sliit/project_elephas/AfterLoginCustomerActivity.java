@@ -74,7 +74,7 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
 
     // redirection code using Intent
     public void redirectToCustomerReqGatheringActivity(View view){
-        Intent intent = new Intent(this,CutomerRequirementUpdateDeleteActivity.class);
+        Intent intent = new Intent(this,CustomerReqGatheringActivity.class);
         // EditText editTextForUsername = findViewById(R.id.editText);
         //   EditText editTextForPassword = findViewById(R.id.editText2);
         //String username = editTextForUsername.getText().toString();

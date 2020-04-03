@@ -138,4 +138,13 @@
     <string name="txtUpdate">Update</string>
     <string name="txtDelete">Delete</string>
     <string name="txtID">ID :</string>
+    <string name="lblName">Name           : </string>
+    <string name="lblNationality">"Nationality       : "</string>
+    <string name="lblNoOfPeople">"NoOfPeople     : "</string>
+    <string name="lblNoOfDays">"NoOfDays         : "</string>
+    <string name="lblArrivalDate">"ArrivalDate       : "</string>
+    <string name="lblDepartureDate">"DepartureDate : "</string>
+    <string name="lblStarCategory">"StarCategory   : "</string>
+    <string name="lblRemark">"Remark             : "</string>
+    <string name="lblCustomerID">Customer ID     :</string>
 </resources>
