@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="PAYMENT"
+        android:text="PAYMENT MANAGER"
         android:textColor="@color/colorBackground"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -37,92 +37,202 @@
                 app:helperText="Select the payment ID"
                 android:textColorHint="@color/colorText">
 
-                <Spinner
-                    android:id="@+id/spinnerPayments"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="23dp"
-                    android:background="@color/colorAccent"
-                    />
+
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-
-            <TextView
-                android:id="@+id/pay_name"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:ems="10"
-                android:hint="Name"
-                android:layout_marginTop="10dp"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
-
-            <TextView
-                android:id="@+id/pay_address"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:ems="10"
-                android:hint="Address"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
-
-            <TextView
-                android:id="@+id/pay_Nic"
+            <Spinner
+                android:id="@+id/spinnerPayments"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:ems="10"
-                android:hint="NIC"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColor="@color/colorText"
+                android:layout_marginTop="23dp"
+                android:background="@color/colorAccent"
                 />
 
-
-            <TextView
-                android:id="@+id/pay_amount"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:ems="10"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:hint="Amount"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/pay_card"
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:ems="10"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:hint="CardNo"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/name" />
 
-            <TextView
-                android:id="@+id/pay_status"
+                <TextView
+                    android:id="@+id/pay_name"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:inputType="text"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:ems="10"
-                android:hint="status"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/txtEmail" />
+
+                <TextView
+                    android:id="@+id/pay_email"
+                    android:layout_width="200dp"
+                    android:layout_height="38dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:inputType="text"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/address" />
+
+                <TextView
+                    android:id="@+id/pay_address"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:inputType="text"
+                    android:textColor="@color/colorText"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/nic" />
+
+                <TextView
+                    android:id="@+id/pay_Nic"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/amount" />
+
+                <TextView
+                    android:id="@+id/pay_amount"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:inputType="text"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/card_no" />
+
+                <TextView
+                    android:id="@+id/pay_card"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:inputType="text"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="Status" />
+
+                <TextView
+                    android:id="@+id/pay_status"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textColor="@color/colorText"
+                    android:textColorHint="@color/colorPrimaryDark" />
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="20dp">
 
                 <Button
                     android:id="@+id/pay_verify"

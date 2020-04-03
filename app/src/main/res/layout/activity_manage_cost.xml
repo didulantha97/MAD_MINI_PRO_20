@@ -43,6 +43,7 @@
             android:textColor="@color/colorPrimaryDark"/>
 
         <Button
+            android:id="@+id/transportBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
@@ -64,6 +65,7 @@
             />
 
         <Button
+            android:id="@+id/transport_manage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
@@ -85,6 +87,7 @@
             />
 
         <Button
+            android:id="@+id/manage_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"

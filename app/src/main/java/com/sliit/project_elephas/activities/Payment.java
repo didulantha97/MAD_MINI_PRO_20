@@ -15,11 +15,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.sliit.project_elephas.R;
 import com.sliit.project_elephas.model.Payments;
 import com.sliit.project_elephas.model.User;
-import com.sliit.project_elephas.sql.DatabaseHelper;
+import com.sliit.project_elephas.sql.DBHelper;
 
 public class Payment extends AppCompatActivity {
 
-    DatabaseHelper db;
+    DBHelper db;
     TextInputEditText name,address,NIC,amount,cardNo;
     Button save;
 
@@ -35,7 +35,7 @@ public class Payment extends AppCompatActivity {
         amount = (TextInputEditText) findViewById(R.id.payAmounts);
         cardNo = (TextInputEditText) findViewById(R.id.pay_status);
 
-        db = new DatabaseHelper(this);
+        db = new DBHelper(this);
 
         addDetail();
 
@@ -83,19 +83,22 @@ public class Payment extends AppCompatActivity {
                             payment.setNic(NIC.getText().toString());
                             payment.setAmount(Double.parseDouble(amount.getText().toString()));
                             payment.setCard(cardNo.getText().toString());
+                            //boolean isInserted = db.insert_payment(payment);
 
-                            boolean isInserted = db.insert_payment(payment);
+                            boolean isInserted = db.addCustomerpayments(payment);
+
                             if (isInserted) {
                                 Toast.makeText(Payment.this, "Payment successful", Toast.LENGTH_LONG).show();
 
-                                Intent intent = new Intent(Payment.this, Payment_manage.class);
+                                Intent intent = new Intent(Payment.this, all_customer_payments.class);
                                 startActivity(intent);
+
+                                finish();
 
                             } else {
                                 Toast.makeText(Payment.this, "Data is not inserted", Toast.LENGTH_LONG).show();
 
                             }
-
 
                         }
                     }

@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.sliit.project_elephas.activities.all_customer_payments;
 
 public class LoginActivity extends AppCompatActivity {
 
     Button login;
+    EditText username, pwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +23,22 @@ public class LoginActivity extends AppCompatActivity {
 
         login = (Button)findViewById(R.id.button);
 
+        username = (EditText)findViewById(R.id.editText);
+        pwd = (EditText)findViewById(R.id.editText2);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, AfterLoginCustomerActivity.class);
-                startActivity(intent);
+
+                if(username.getText().toString().equals("isara") && pwd.getText().toString().equals("1234")){
+                    Intent intent = new Intent(LoginActivity.this, AfterLoginCustomerActivity.class);
+                    startActivity(intent);
+                }else if (username.getText().toString().equals("admin") && pwd.getText().toString().equals("1234")){
+                    Intent newintent = new Intent(LoginActivity.this, AfterLoginActivityAdminView.class);
+                    startActivity(newintent);
+                }else{
+                    Toast.makeText(LoginActivity.this, "You can not login", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

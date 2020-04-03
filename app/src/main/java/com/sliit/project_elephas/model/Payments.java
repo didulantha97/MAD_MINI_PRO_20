@@ -59,14 +59,6 @@ public class Payments {
         this.card = card;
     }
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -75,5 +67,11 @@ public class Payments {
         this.status = status;
     }
 
+    public double getAmount() {
+        return amount;
+    }
 
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 }

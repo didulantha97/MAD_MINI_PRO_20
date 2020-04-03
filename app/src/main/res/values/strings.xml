@@ -142,7 +142,7 @@
     <string name="total_cost">Total Cost</string>
     <string name="manage_payments">Manage Payments</string>
     <string name="tours">Tours</string>
-    <string name="gross_millege">Gross Millege</string>
+    <string name="gross_millege">Gross Mileage</string>
     <string name="extra_mileage">Extra Mileage</string>
     <string name="total_mileage">Total Mileage</string>
     <string name="charge_per_km_lkr">Charge per Km LKR</string>
@@ -155,4 +155,7 @@
     <string name="transport_cost">Transport Cost</string>
     <string name="transport_cost_management">Transport Cost Management</string>
     <string name="driver_guide_cost_management"><![CDATA[Driver & Guide cost Management]]></string>
+    <string name="driver_guide_cost_management_all"><![CDATA[Driver & Guide Cost Management]]></string>
+    <string name="passport_number">Passport Number</string>
+    <string name="calculate_save"><![CDATA[Calculate & save]]></string>
 </resources>

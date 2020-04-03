@@ -13,14 +13,14 @@ import android.widget.Toast;
 
 import com.sliit.project_elephas.R;
 import com.sliit.project_elephas.model.Payments;
-import com.sliit.project_elephas.sql.DatabaseHelper;
+import com.sliit.project_elephas.sql.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Payment_manage extends AppCompatActivity {
 
-    DatabaseHelper db;
+    DBHelper db;
 
     Spinner spinner;
 
@@ -45,14 +45,20 @@ public class Payment_manage extends AppCompatActivity {
         verify = (Button) findViewById(R.id.pay_verify);
         refund = (Button) findViewById(R.id.pay_refund);
 
-        db = new DatabaseHelper(this);
+        db = new DBHelper(this);
 
-        spinnerClass();
+        try {
+            spinnerClass();
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "spinnerClass() not working", Toast.LENGTH_SHORT).show();
+        }
+
+        //spinnerClass();
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 ArrayList<Payments> allModels = db.selectedPayment(spinner.getSelectedItem().toString());
 
                 for(int x=0;allModels.size()>x;x++){
@@ -112,6 +118,9 @@ public class Payment_manage extends AppCompatActivity {
 
     }
 
+    /**
+     * Function to load the spinner data from SQLite database
+     * */
     private void spinnerClass(){
         ArrayList<Payments> allModels1 = db.readAllPayments();
 
@@ -130,3 +139,5 @@ public class Payment_manage extends AppCompatActivity {
     }
 
 }
+
+
