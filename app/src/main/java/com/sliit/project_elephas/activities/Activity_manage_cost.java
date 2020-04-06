@@ -13,7 +13,7 @@ import com.sliit.project_elephas.R;
 
 public class Activity_manage_cost extends AppCompatActivity {
 
-    Button pay_man, transportBtn, transport_manage;
+    Button pay_man, transportBtn, transport_manage, driverBtn, driverManageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,26 @@ public class Activity_manage_cost extends AppCompatActivity {
         pay_man = (Button)findViewById(R.id.manage_pay);
         transportBtn = (Button)findViewById(R.id.transportBtn);
         transport_manage = (Button)findViewById(R.id.transport_manage);
+        driverBtn = (Button)findViewById(R.id.driverBtn);
+        driverManageBtn = (Button)findViewById(R.id.driverManageBtn);
+
+
+        driverManageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent driverIntent = new Intent(Activity_manage_cost.this, Activity_man_cost_mange.class);
+                startActivity(driverIntent);
+            }
+        });
+
+
+        driverBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent driverIntent = new Intent(Activity_manage_cost.this, Activity_man_cost.class);
+                startActivity(driverIntent);
+            }
+        });
 
         transport_manage.setOnClickListener(new View.OnClickListener() {
             @Override

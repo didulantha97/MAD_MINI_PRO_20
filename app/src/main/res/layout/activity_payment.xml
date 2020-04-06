@@ -64,6 +64,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:hint="Email"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorText"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:hint="Address"
                 app:errorEnabled="true"
                 app:hintTextColor="@color/colorText"
@@ -83,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="NIC"
+                android:hint="Passport"
                 app:errorEnabled="true"
                 app:hintTextColor="@color/colorText"
                 app:endIconMode="clear_text">

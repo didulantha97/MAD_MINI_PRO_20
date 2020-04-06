@@ -22,7 +22,6 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".CustomerReqGatheringActivity" />
         <activity android:name=".AfterLoginCustomerActivity" />
-        <activity android:name=".ManageInformationForToursActivity" />
         <activity android:name=".AfterLoginActivityAdminView" />
         <activity android:name=".LoginActivity">
             <intent-filter>

@@ -137,7 +137,7 @@
                     android:layout_height="40dp"
                     android:layout_margin="10dp"
                     android:padding="10dp"
-                    android:text="@string/nic" />
+                    android:text="@string/passport_number" />
 
                 <TextView
                     android:id="@+id/pay_Nic"

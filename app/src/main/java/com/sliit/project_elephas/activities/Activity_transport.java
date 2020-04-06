@@ -17,6 +17,7 @@ import com.sliit.project_elephas.model.Transport;
 import com.sliit.project_elephas.model.User;
 import com.sliit.project_elephas.sql.DBHelper;
 
+import java.sql.Driver;
 import java.text.DecimalFormat;
 
 public class Activity_transport extends AppCompatActivity {
@@ -60,8 +61,6 @@ public class Activity_transport extends AppCompatActivity {
             public void onClick(View v) {
 
                 Transport transport = new Transport();
-
-
 
                 try {
                     String pass = passport.getText().toString();

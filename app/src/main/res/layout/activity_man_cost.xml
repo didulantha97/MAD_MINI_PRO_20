@@ -57,10 +57,32 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:padding="10dp"
+                        android:text="@string/passport_number" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_driver_guide"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="@string/passport_number"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
                         android:text="@string/drivers_bata_lkr" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/gross"
+                        android:id="@+id/bata"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -82,7 +104,7 @@
                         android:text="@string/guide_fee_lkr" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/extraMileage"
+                        android:id="@+id/guide"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -101,41 +123,20 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:padding="10dp"
-                        android:text="@string/total_in_lkr" />
-
-                    <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/totalMileage"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:hint="@string/total_mileage"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                        android:text="@string/total_in_usd" />
 
                     <TextView
+                        android:id="@+id/usd"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:padding="10dp"
                         android:text="@string/total_in_usd" />
 
-                    <com.rengwuxian.materialedittext.MaterialEditText
-                        android:id="@+id/chargePerKm"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:hint="@string/total_in_usd"/>
-
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/t_save"
+                    android:id="@+id/save"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

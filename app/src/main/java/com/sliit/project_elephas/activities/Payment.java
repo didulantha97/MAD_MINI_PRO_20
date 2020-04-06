@@ -20,7 +20,7 @@ import com.sliit.project_elephas.sql.DBHelper;
 public class Payment extends AppCompatActivity {
 
     DBHelper db;
-    TextInputEditText name,address,NIC,amount,cardNo;
+    TextInputEditText name,address,NIC,amount,cardNo, email;
     Button save;
 
     @Override
@@ -30,6 +30,7 @@ public class Payment extends AppCompatActivity {
 
         //Define components
         name = (TextInputEditText) findViewById(R.id.namePay);
+        email = (TextInputEditText) findViewById(R.id.emailPay);
         address = (TextInputEditText) findViewById(R.id.addressPay);
         NIC = (TextInputEditText) findViewById(R.id.payNic);
         amount = (TextInputEditText) findViewById(R.id.payAmounts);
@@ -59,7 +60,10 @@ public class Payment extends AppCompatActivity {
                             name.setError("Enter the name");
                             Toast.makeText(getApplicationContext(), "Payment not successfull", Toast.LENGTH_LONG).show();
 
-                        } else if (address.getText().toString().equals("")) {
+                        } else if(email.getText().toString().equals("")){
+                            email.setError("Enter your Email");
+                            Toast.makeText(getApplicationContext(), "Enter your Email", Toast.LENGTH_LONG).show();
+                        }else if (address.getText().toString().equals("")) {
                             address.setError("Enter your address");
                             Toast.makeText(getApplicationContext(), "Enter your address", Toast.LENGTH_LONG).show();
                         } else if (NIC.getText().toString().length() != 10) {
@@ -77,7 +81,7 @@ public class Payment extends AppCompatActivity {
 
                             Payments payment = new Payments();
 
-                            payment.setUser_email(User.getUserEmail());
+                            payment.setUser_email(email.getText().toString());
                             payment.setName(name.getText().toString());
                             payment.setAddress(address.getText().toString());
                             payment.setNic(NIC.getText().toString());

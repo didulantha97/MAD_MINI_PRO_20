@@ -38,7 +38,7 @@
                 android:textColorHint="@color/colorText">
 
                 <Spinner
-                    android:id="@+id/spinnerPayments"
+                    android:id="@+id/spinnerDriver"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="23dp"
@@ -49,51 +49,94 @@
 
 
 
-            <TextView
-                android:id="@+id/pay_name"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:ems="10"
-                android:hint="@string/drivers_bata_lkr"
-                android:layout_marginTop="10dp"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/pay_address"
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/passport_number" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/passport_driver_guide"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/passport_number"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:ems="10"
-                android:hint="@string/guide_fee_lkr"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/pay_Nic"
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/drivers_bata_lkr" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/bata"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/drivers_bata_lkr"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:ems="10"
-                android:hint="@string/total_in_lkr"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/guide_fee_lkr" />
 
-            <TextView
-                android:id="@+id/pay_amount"
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/guide"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/guide_fee_lkr"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:ems="10"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:hint="@string/total_in_usd"
-                android:inputType="textPersonName"
-                android:textColor="@color/colorText"
-                />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/total_in_usd" />
+
+                <TextView
+                    android:id="@+id/usd"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/total_in_usd" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,7 +146,7 @@
                 android:layout_marginTop="10dp">
 
                 <Button
-                    android:id="@+id/pay_verify"
+                    android:id="@+id/update"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Update"
@@ -112,7 +155,7 @@
                     />
 
                 <Button
-                    android:id="@+id/pay_refund"
+                    android:id="@+id/delete"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"

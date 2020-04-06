@@ -24,7 +24,7 @@ public class Payment_manage extends AppCompatActivity {
 
     Spinner spinner;
 
-    TextView name,address,nic,amount,cardNo,status;
+    TextView name,address,nic,amount,cardNo,status,pay_email;
 
     Button verify,refund;
 
@@ -41,6 +41,7 @@ public class Payment_manage extends AppCompatActivity {
         amount = (TextView) findViewById(R.id.pay_amount);
         cardNo = (TextView) findViewById(R.id.pay_card);
         status = (TextView) findViewById(R.id.pay_status);
+        pay_email = (TextView) findViewById(R.id.pay_email);
 
         verify = (Button) findViewById(R.id.pay_verify);
         refund = (Button) findViewById(R.id.pay_refund);
@@ -64,6 +65,7 @@ public class Payment_manage extends AppCompatActivity {
                 for(int x=0;allModels.size()>x;x++){
 
                     name.setText(allModels.get(x).getName());
+                    pay_email.setText(allModels.get(x).getUser_email());
                     address.setText(allModels.get(x).getAddress());
                     nic.setText(allModels.get(x).getNic());
                     amount.setText(Double.toString(allModels.get(x).getAmount()));
