@@ -42,6 +42,7 @@ public class CustomerRequirementListAdapter extends BaseAdapter {
         TextView tvCustomerID = (TextView) v.findViewById(R.id.tv_customerID);
         TextView tvName = (TextView) v.findViewById(R.id.tv_name);
         TextView tvNationality = (TextView) v.findViewById(R.id.tv_nationality);
+        TextView tvPassportNo = (TextView) v.findViewById(R.id.tv_PassportNo);
         TextView tvNoOfPeople = (TextView) v.findViewById(R.id.tv_noOfPeople);
         TextView tvNoOfDays = (TextView) v.findViewById(R.id.tv_noOfDays);
         TextView tvArrivalDate = (TextView) v.findViewById(R.id.tv_arrivalDate);
@@ -54,6 +55,7 @@ public class CustomerRequirementListAdapter extends BaseAdapter {
         tvCustomerID.setText(ID);
         tvName.setText(mCustomerRequirementList.get(position).getName());
         tvNationality.setText(mCustomerRequirementList.get(position).getNationality());
+        tvPassportNo.setText(mCustomerRequirementList.get(position).getPassPortNo());
         tvNoOfPeople.setText(mCustomerRequirementList.get(position).getNoOfPeople());
         tvNoOfDays.setText(mCustomerRequirementList.get(position).getNoOfDays());
         tvArrivalDate.setText(mCustomerRequirementList.get(position).getArrivalDate());
@@ -62,7 +64,7 @@ public class CustomerRequirementListAdapter extends BaseAdapter {
         tvRemark.setText(mCustomerRequirementList.get(position).getRemark());
 
         //save customer ID to tag
-        v.setTag(mCustomerRequirementList.get(position).getId());
+        v.setTag(mCustomerRequirementList.get(position).getPassPortNo());
 
         return v;
     }

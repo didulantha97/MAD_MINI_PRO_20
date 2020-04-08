@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class AfterLoginCustomerActivity extends AppCompatActivity {
 
+    private static String PASSPORT_NO = null;
     DatabaseHelper mDatabaseHelper;
     Button btnViewAll;
 
@@ -18,6 +19,9 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_login_customer);
+
+        PASSPORT_NO = getIntent().getExtras().getString("CUSTOMER_PASSPORT_NO");
+
 
         btnViewAll = (Button) findViewById(R.id.button3);
         mDatabaseHelper = new DatabaseHelper(this);
@@ -75,6 +79,12 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
     // redirection code using Intent
     public void redirectToCustomerReqGatheringActivity(View view){
         Intent intent = new Intent(this,CustomerReqGatheringActivity.class);
+
+        //intent.putExtra("CUSTOMER_ID",);
+        intent.putExtra("CUSTOMER_PASSPORT_NO",PASSPORT_NO);
+        //intent.putExtra("CUSTOMER_EMAIL", );
+        //intent.putExtra("CUSTOMER_NAME",);
+
         // EditText editTextForUsername = findViewById(R.id.editText);
         //   EditText editTextForPassword = findViewById(R.id.editText2);
         //String username = editTextForUsername.getText().toString();
@@ -87,6 +97,7 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
 
     public void redirectToCustomerViewListOfReqActivity(View view){
         Intent intent = new Intent(this,CustomerViewListOfReqActivity.class);
+        intent.putExtra("CUSTOMER_PASSPORT_NO",PASSPORT_NO);
         startActivity(intent);
 
     }

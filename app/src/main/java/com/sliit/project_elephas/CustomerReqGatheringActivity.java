@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class CustomerReqGatheringActivity extends AppCompatActivity {
 
     private static final String TAG = "CustomerReqGatheringActivity";
+    private static String PASSPORT_NO = null;
     DatabaseHelper mDatabaseHelper;
     Button btnSave;
     Button btnCancel;
@@ -22,6 +23,9 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_req_gathering);
+
+        PASSPORT_NO = getIntent().getExtras().getString("CUSTOMER_PASSPORT_NO");
+
 
         /*
         Intent intent = getIntent();
@@ -82,8 +86,9 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //getting values form the form fields (editTexts) as String values put those into a String variable for each
-                String name = Name.getText().toString();
-                String nationality = Nationality.getText().toString();
+                //String name = Name.getText().toString();
+                //String nationality = Nationality.getText().toString();
+                String passportno= PASSPORT_NO;
                 String noOfPeople = NoOfPeople.getText().toString();
                 String arrivalDate = ArrivalDate.getText().toString();
                 String departureDate = DepartureDate.getText().toString();
@@ -92,8 +97,8 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
                 String remarks = Remarks.getText().toString();
 
                 //check all the fields are not empty
-                if (name.length() !=0 && nationality.length() != 0 && noOfPeople.length() != 0 && arrivalDate.length() != 0 && departureDate.length() != 0 && noOfDays.length() != 0 && starCategory.length() != 0 && remarks.length() != 0) {
-                    boolean isInserted = mDatabaseHelper.insertData(name, nationality, noOfPeople, arrivalDate, departureDate, noOfDays, starCategory, remarks);
+                if (passportno.length() != 0 && noOfPeople.length() != 0 && arrivalDate.length() != 0 && departureDate.length() != 0 && noOfDays.length() != 0 && starCategory.length() != 0 && remarks.length() != 0) {
+                    boolean isInserted = mDatabaseHelper.insertData(passportno, noOfPeople, arrivalDate, departureDate, noOfDays, starCategory, remarks);
 
                     if (isInserted == true) {
                         //data insertion successful

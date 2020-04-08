@@ -137,7 +137,7 @@
     <string name="txtName">Name</string>
     <string name="txtUpdate">Update</string>
     <string name="txtDelete">Delete</string>
-    <string name="txtID">ID :</string>
+    <string name="txtID">Requirement ID:</string>
     <string name="lblName">Name           : </string>
     <string name="lblNationality">"Nationality       : "</string>
     <string name="lblNoOfPeople">"NoOfPeople     : "</string>
@@ -147,4 +147,18 @@
     <string name="lblStarCategory">"StarCategory   : "</string>
     <string name="lblRemark">"Remark             : "</string>
     <string name="lblCustomerID">Customer ID     :</string>
+    <string name="txtPhone">Phone</string>
+    <string name="txtPassPortNo">Passport No</string>
+    <string name="txtUser">USER</string>
+    <string name="txtAdmin">ADMIN</string>
+
+    
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtNIC">NIC</string>
+    <string name="txtAdminPassword">Admin Password</string>
+    <string name="txtLoginAdditional">Admins: Use your NIC / Email as login credentials</string>
+    <string name="txtLoginHintForUserOrAdminID">Passport / Email</string>
+    <string name="txtCustomerReqUpdateDelete">Enter your requirements below</string>
+    <string name="txtPassPortDisplay">Passport No :</string>
+    <string name="txtNationalityDisplay">Nationality :</string>
 </resources>

@@ -3,6 +3,7 @@ package com.sliit.project_elephas;
 public class CustomerRequirement {
 
     private int id;
+    private String passPortNo;
     private String name;
     private String nationality;
     private String noOfPeople;
@@ -12,11 +13,27 @@ public class CustomerRequirement {
     private String starCategory;
     private String remark;
 
+
+    //constructor
+    public CustomerRequirement() {
+        this.id = 0;
+        this.name = null;
+        this.nationality = null;
+        this.passPortNo = null;
+        this.noOfPeople = null;
+        this.noOfDays = null;
+        this.arrivalDate = null;
+        this.departureDate = null;
+        this.starCategory = null;
+        this.remark = null;
+    }
+
     //constructor with parameters
-    public CustomerRequirement(int id, String name, String nationality, String noOfPeople, String noOfDays, String arrivalDate, String departureDate, String starCategory, String remark) {
+    public CustomerRequirement(int id,String name,String nationality,String passPortNo, String noOfPeople, String noOfDays, String arrivalDate, String departureDate, String starCategory, String remark) {
         this.id = id;
         this.name = name;
         this.nationality = nationality;
+        this.passPortNo = passPortNo;
         this.noOfPeople = noOfPeople;
         this.noOfDays = noOfDays;
         this.arrivalDate = arrivalDate;
@@ -35,7 +52,15 @@ public class CustomerRequirement {
         this.id = id;
     }
 
-    public String getName() {
+    public String getPassPortNo() {
+        return passPortNo;
+    }
+
+    public void setPassPortNo(String passPortNo) {
+        this.passPortNo = passPortNo;
+    }
+
+        public String getName() {
         return name;
     }
 
@@ -98,4 +123,7 @@ public class CustomerRequirement {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+
+
 }
