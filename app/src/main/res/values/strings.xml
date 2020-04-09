@@ -161,4 +161,7 @@
     <string name="txtCustomerReqUpdateDelete">Enter your requirements below</string>
     <string name="txtPassPortDisplay">Passport No :</string>
     <string name="txtNationalityDisplay">Nationality :</string>
+    <string name="txtSampleDataForRequirementID">Sample Requirement ID 1</string>
+    <string name="txtSampleDataForPassPort">SLXXX1</string>
+    <string name="txtSampleDataForNationality">Indian</string>
 </resources>
