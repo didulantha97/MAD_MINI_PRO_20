@@ -42,8 +42,8 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
         }
         */
 
-        Name = (EditText) findViewById(R.id.editText3);
-        Nationality = (EditText) findViewById(R.id.editText4);
+        //Name = (EditText) findViewById(R.id.editText3);
+        //Nationality = (EditText) findViewById(R.id.editText4);
         NoOfPeople = (EditText) findViewById(R.id.editText5);
         ArrivalDate = (EditText) findViewById(R.id.editText11);
         DepartureDate = (EditText) findViewById(R.id.editText12);

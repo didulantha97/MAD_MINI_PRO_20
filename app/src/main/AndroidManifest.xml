@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CutomerRequirementUpdateDeleteActivity" />
+        <activity android:name=".AdminViewListOfCustomerRequirementActivity" />
         <activity
             android:name=".CustomerViewListOfReqActivity"
             android:label="@string/title_activity_customer_view_list_of_req"

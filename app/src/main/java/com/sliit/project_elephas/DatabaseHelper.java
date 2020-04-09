@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -142,6 +144,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getAllRequirementsForACustomerData(String passportno) {
         SQLiteDatabase db =  this.getReadableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        return res;
+    }
+
+    public Cursor getAllCustomerRequirementDBForAdminView () {
+
+        //<CustomerRequirement> dbCustomerRequirement = new ArrayList<CustomerRequirement>();
+
+        SQLiteDatabase db =  this.getReadableDatabase();
+        //Cursor res = db.rawQuery("SELECT "+TABLE_NAME+"."+COL1+", "+CUSTOMER_TABLE_COL2+","+CUSTOMER_TABLE_COL3+","+CUSTOMER_TABLE_COL4+","+CUSTOMER_TABLE_COL5+","+CUSTOMER_TABLE_COL6+","+COL3+","+COL4+","+COL5+","+COL6+","+COL7+","+COL8+" FROM "+TABLE_NAME_CUSTOMER+" INNER JOIN "+TABLE_NAME+" ON "+TABLE_NAME_CUSTOMER+"."+CUSTOMER_TABLE_COL4+" = "+TABLE_NAME+"."+COL2+"",null);
+        Cursor res = db.rawQuery("SELECT "+TABLE_NAME+"."+COL1+", "+CUSTOMER_TABLE_COL2+","+CUSTOMER_TABLE_COL3+","+TABLE_NAME_CUSTOMER+"."+CUSTOMER_TABLE_COL4+","+CUSTOMER_TABLE_COL5+","+CUSTOMER_TABLE_COL6+","+COL3+","+COL4+","+COL5+","+COL6+","+COL7+","+COL8+" FROM "+TABLE_NAME_CUSTOMER+" INNER JOIN "+TABLE_NAME+" ON "+TABLE_NAME_CUSTOMER+"."+CUSTOMER_TABLE_COL4+" = "+TABLE_NAME+"."+COL2+"",null);
+
         return res;
     }
 

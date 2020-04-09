@@ -56,6 +56,10 @@ public class LoginActivity extends AppCompatActivity {
             } else  {
                 //then the admin is found and it's login credentials are valid
                 Intent intent = new Intent(getApplicationContext(),AfterLoginActivityAdminView.class);
+                intent.putExtra("ADMIN_ID", thisAdmin.getId());
+                intent.putExtra("ADMIN_PASSPORT_NO", thisAdmin.getPassportno());
+                intent.putExtra("ADMIN_EMAIL", thisAdmin.getEmail());
+                intent.putExtra("ADMIN_NAME", thisAdmin.getName());
                 startActivity(intent);
             }
         } else {
