@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.Payment_manage">
+    tools:context=".activities.Activity_transport_manage">
 
     <TextView
         android:id="@+id/textView25"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="PAYMENT MANAGER"
+        android:text="Manage Transport"
         android:textColor="@color/colorBackground"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -34,46 +34,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:helperText="Select the payment ID"
-                android:textColorHint="@color/colorText">
-
-
-
-            </com.google.android.material.textfield.TextInputLayout>
+                app:helperText="Select the Transport ID"
+                android:textColorHint="@color/colorText"/>
 
             <Spinner
-                android:id="@+id/spinnerPayments"
+                android:id="@+id/spinnerTransport"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="23dp"
                 android:background="@color/colorAccent"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:padding="10dp"
-                    android:text="@string/name" />
-
-                <TextView
-                    android:id="@+id/pay_name"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:inputType="text"
-                    android:textColor="@color/colorText"
-                    />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,72 +54,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:padding="10dp"
-                    android:text="@string/txtEmail" />
-
-                <TextView
-                    android:id="@+id/pay_email"
-                    android:layout_width="200dp"
-                    android:layout_height="38dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:inputType="text"
-                    android:textColor="@color/colorText"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:padding="10dp"
-                    android:text="@string/address" />
-
-                <TextView
-                    android:id="@+id/pay_address"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:inputType="text"
-                    android:textColor="@color/colorText"
-                    />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:padding="10dp"
                     android:text="@string/passport_number" />
 
-                <TextView
-                    android:id="@+id/pay_Nic"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:textColor="@color/colorText"
-                    />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/passport"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/passport_number"/>
 
             </LinearLayout>
 
@@ -158,21 +76,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:padding="10dp"
-                    android:text="@string/amount" />
+                    android:text="@string/gross_millege" />
 
-                <TextView
-                    android:id="@+id/pay_amount"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:inputType="text"
-                    android:textColor="@color/colorText"
-                    />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/gross"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/gross_millege"/>
 
             </LinearLayout>
 
@@ -183,24 +98,20 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:padding="10dp"
-                    android:text="@string/card_no" />
+                    android:text="@string/extra_mileage" />
 
-                <TextView
-                    android:id="@+id/pay_card"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:padding="10dp"
-                    android:textColorHint="@color/colorPrimaryDark"
-                    android:inputType="text"
-                    android:textColor="@color/colorText"
-                    />
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/extraMileage"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/extra_mileage"/>
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,21 +120,64 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:padding="10dp"
-                    android:text="Status" />
+                    android:text="@string/total_mileage" />
 
                 <TextView
-                    android:id="@+id/pay_status"
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:inputType="text"
+                    android:id="@+id/totalMileage"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:textColor="@color/colorText"
-                    android:textColorHint="@color/colorPrimaryDark" />
+                    android:layout_margin="10dp"
+                    android:hint="@string/total_mileage"/>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/charge_per_km_lkr" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/chargePerKm"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="@string/charge_per_km_lkr"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="@string/total_cost_in_usd" />
+
+                <TextView
+                    android:id="@+id/total_cost_in_usd"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:hint="@string/total_cost_in_usd"/>
 
             </LinearLayout>
 
@@ -232,23 +186,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="10dp">
 
                 <Button
-                    android:id="@+id/pay_verify"
+                    android:id="@+id/transport_update"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
-                    android:text="Verify"
+                    android:text="Update"
                     android:textColor="@color/colorBackground"
                     android:textStyle="bold"
                     />
 
                 <Button
-                    android:id="@+id/pay_refund"
+                    android:id="@+id/transport_delete"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="Refund"
+                    android:text="Delete"
                     android:backgroundTint="@color/colorAccent"
                     android:textColor="@color/colorBackground"
                     android:textStyle="bold" />
