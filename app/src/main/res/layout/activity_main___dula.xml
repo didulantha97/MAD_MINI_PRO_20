@@ -45,7 +45,7 @@
         android:text="@string/page1but1"
         android:textColor="#090909"
         android:textStyle="bold"
-        app:backgroundTint="@color/colorAccentDark"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
