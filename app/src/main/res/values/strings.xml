@@ -24,7 +24,6 @@
     <string name="txtCompletedTours">Completed Tours</string>
     <string name="txtViewCustomerRequirements">View Customer Requirements</string>
     <string name="txtCustomerRequirements">Customer Requirements</string>
-    <string name="txtName">Name</string>
     <string name="txtArrivalDate">Arrival Date</string>
     <string name="txtDepartureDate">Departure Date</string>
     <string name="txtNationality">Nationality</string>
@@ -158,4 +157,34 @@
     <string name="driver_guide_cost_management_all"><![CDATA[Driver & Guide Cost Management]]></string>
     <string name="passport_number">Passport Number</string>
     <string name="calculate_save"><![CDATA[Calculate & save]]></string>
+    <string name="txtName">Name</string>
+    <string name="txtUpdate">Update</string>
+    <string name="txtDelete">Delete</string>
+    <string name="txtID">Requirement ID:</string>
+    <string name="lblName">Name           : </string>
+    <string name="lblNationality">"Nationality       : "</string>
+    <string name="lblNoOfPeople">"NoOfPeople     : "</string>
+    <string name="lblNoOfDays">"NoOfDays         : "</string>
+    <string name="lblArrivalDate">"ArrivalDate       : "</string>
+    <string name="lblDepartureDate">"DepartureDate : "</string>
+    <string name="lblStarCategory">"StarCategory   : "</string>
+    <string name="lblRemark">"Remark             : "</string>
+    <string name="lblCustomerID">Customer ID     :</string>
+    <string name="txtPhone">Phone</string>
+    <string name="txtPassPortNo">Passport No</string>
+    <string name="txtUser">USER</string>
+    <string name="txtAdmin">ADMIN</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtNIC">NIC</string>
+    <string name="txtAdminPassword">Admin Password</string>
+    <string name="txtLoginAdditional">Admins: Use your NIC / Email as login credentials</string>
+    <string name="txtLoginHintForUserOrAdminID">Passport / Email</string>
+    <string name="txtCustomerReqUpdateDelete">Enter your requirements below</string>
+    <string name="txtPassPortDisplay">Passport No :</string>
+    <string name="txtNationalityDisplay">Nationality :</string>
+    <string name="txtSampleDataForRequirementID">Sample Requirement ID 1</string>
+    <string name="txtSampleDataForPassPort">SLXXX1</string>
+    <string name="txtSampleDataForNationality">Indian</string>
 </resources>

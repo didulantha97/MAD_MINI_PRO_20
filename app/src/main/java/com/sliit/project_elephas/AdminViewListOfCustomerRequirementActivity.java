@@ -1,15 +1,12 @@
 package com.sliit.project_elephas;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,9 +17,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerViewListOfReqActivity extends AppCompatActivity {
+public class AdminViewListOfCustomerRequirementActivity extends AppCompatActivity {
 
-    private static final String TAG = "CustomerViewListOfReqActivity";
+    private static final String TAG = "AdminViewListOfCustomerRequirementActivity";
 
     /* CUSTOMER REQUIREMENT =====================================================================*/
     public static final String COL1 = "ID";
@@ -66,7 +63,7 @@ public class CustomerViewListOfReqActivity extends AppCompatActivity {
 
         //data should be retrieved from the database - using Cursor object
         // Cursor obj data should be mapped here
-        viewData(PASSPORT_NO);
+        viewData();
 
 
         lvCustomerReq.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -86,33 +83,17 @@ public class CustomerViewListOfReqActivity extends AppCompatActivity {
     }
 
 
-    private void viewData(String passportno) {
+    private void viewData() {
 
-        Cursor customer = mDatabaseHelper.getCustomerData(passportno);
-        String customerID = null;
-        String customerName = null;
-        String customerNationality = null;
-
-        if (customer.getCount()==0) {
-            Toast.makeText(getApplicationContext(),"Customer Not Found : Customer Table",Toast.LENGTH_SHORT).show();
-        } else  {
-            while (customer.moveToNext()) {
-                customerID = customer.getString(customer.getColumnIndex(CUSTOMER_TABLE_COL1));
-                customerName = customer.getString(customer.getColumnIndex(CUSTOMER_TABLE_COL2));
-                customerNationality = customer.getString(customer.getColumnIndex(CUSTOMER_TABLE_COL3));
-            }
-            customer.close();
-        }
-
-        Cursor cursor = mDatabaseHelper.getAllRequirementsForACustomerData(passportno);
+        Cursor cursor = mDatabaseHelper.getAllCustomerRequirementDBForAdminView();
 
         if (cursor.getCount()==0) {
             Toast.makeText(getApplicationContext(),"No data to show",Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
                 String id = cursor.getString(cursor.getColumnIndex(COL1));
-                //String name = cursor.getString(cursor.getColumnIndex(COL2));
-                //String nationality = cursor.getString(cursor.getColumnIndex(COL3));
+                String name = cursor.getString(cursor.getColumnIndex(CUSTOMER_TABLE_COL2));
+                String nationality = cursor.getString(cursor.getColumnIndex(CUSTOMER_TABLE_COL3));
                 String passportNo = cursor.getString(cursor.getColumnIndex(COL2));
                 String noOfPeople = cursor.getString(cursor.getColumnIndex(COL3));
                 String noOfDays = cursor.getString(cursor.getColumnIndex(COL6));
@@ -122,7 +103,7 @@ public class CustomerViewListOfReqActivity extends AppCompatActivity {
                 String remark = cursor.getString(cursor.getColumnIndex(COL8));
 
                 // retrieved data should be mapped here
-                mCustomerRequirementList.add(new CustomerRequirement(Integer.parseInt(id),customerName,customerNationality,passportNo,noOfPeople,noOfDays,arrivalDate,departureDate,starCategory,remark));
+                mCustomerRequirementList.add(new CustomerRequirement(Integer.parseInt(id),name,nationality,passportNo,noOfPeople,noOfDays,arrivalDate,departureDate,starCategory,remark));
             }
 
             cursor.close();

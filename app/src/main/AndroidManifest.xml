@@ -15,6 +15,8 @@
         <activity android:name=".activities.Activity_man_cost" />
         <activity android:name=".activities.Activity_transport" />
         <activity android:name=".activities.all_customer_payments" />
+        <activity android:name=".CutomerRequirementUpdateDeleteActivity" />
+        <activity android:name=".AdminViewListOfCustomerRequirementActivity" />
         <activity
             android:name=".CustomerViewListOfReqActivity"
             android:label="@string/title_activity_customer_view_list_of_req"
