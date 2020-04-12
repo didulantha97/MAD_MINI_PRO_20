@@ -14,7 +14,7 @@
         android:text="PAYMENT"
         android:gravity="center"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorText"
+        android:textColor="@color/colorSecondaryText"
         android:textSize="24sp"
         android:textStyle="bold"/>
 
@@ -36,7 +36,7 @@
                 android:text="Include Your Payment Details Here"
                 android:gravity="center"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
 
@@ -52,6 +52,25 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/namePay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Email"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/colorText"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailPay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -83,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="NIC"
+                android:hint="Passport"
                 app:errorEnabled="true"
                 app:hintTextColor="@color/colorText"
                 app:endIconMode="clear_text">
@@ -142,6 +161,7 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Pay"
+                app:backgroundTint="@color/colorAccent"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:textSize="16sp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AfterLoginActivityAdminView">\
+    tools:context=".AfterLoginActivityAdminView">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -12,7 +12,7 @@
         android:layout_height="94dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/design_default_color_secondary_variant"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,7 +42,8 @@
         android:text="@string/txtHello"
         android:textSize="18sp"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toTopOf="@+id/dubut4"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +58,7 @@
         android:background="@color/colorPrimary"
         android:text="@string/txtCompletedTours"
         android:textColor="@android:color/background_light"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -65,49 +66,48 @@
         app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <Button
-        android:id="@+id/dubut4"
+        android:id="@+id/button4"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="@string/txtViewCustomerRequirements"
         android:textColor="@android:color/background_light"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
-        app:layout_constraintBottom_toTopOf="@+id/dubut5"
-        app:layout_constraintEnd_toEndOf="@+id/dubut5"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/dubut5"
+        app:layout_constraintStart_toStartOf="@+id/button5"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/dubut5"
+        android:id="@+id/button5"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        android:onClick="redirectWithDataToManageInformationForTours"
         android:text="@string/txtManageInfoTours"
         android:textColor="@android:color/background_light"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
-        app:layout_constraintBottom_toTopOf="@+id/dulbutsave"
-        app:layout_constraintEnd_toEndOf="@+id/dulbutsave"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="@+id/button6"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/dulbutsave"
-        app:layout_constraintTop_toBottomOf="@+id/dubut4" />
+        app:layout_constraintStart_toStartOf="@+id/button6"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
-        android:id="@+id/dulbutsave"
+        android:id="@+id/button6"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        android:text="@string/txtUnconfirmedTours"
+        android:text="@string/tours"
         android:textColor="@android:color/background_light"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="@+id/button7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/dubut5" />
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <Button
         android:id="@+id/button7"
@@ -115,13 +115,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        android:text="@string/txtConfirmedTours"
+        android:text="@string/manage_payments"
         android:textColor="@android:color/background_light"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="@+id/button8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/dulbutsave" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
