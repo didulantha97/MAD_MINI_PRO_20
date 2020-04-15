@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/etailscrud" />
+            android:text="@string/etailscrud"
+            app:backgroundTint="@color/bc" />
 
         <EditText
             android:id="@+id/pno"
@@ -73,7 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/newvewall" />
+            android:text="@string/newvewall"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/add_btn"
@@ -81,7 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/anewpackage" />
+            android:text="@string/anewpackage"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/update_btn"
@@ -89,7 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/updatebut3" />
+            android:text="@string/updatebut3"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/delete_btn"
@@ -97,7 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/deletepackages" />
+            android:text="@string/deletepackages"
+            app:backgroundTint="@color/bc" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
