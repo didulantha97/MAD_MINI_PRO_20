@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".other_packages">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="333dp"
-        android:layout_height="406dp"
-        android:layout_marginTop="104dp"
-        android:text="@string/othercostmseg1"
-        android:textColor="#E9372E"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/f1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:onClick="changefragment"
+        android:text="@string/package1"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/f2_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changefragment"
+        android:text="@string/pac3"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/f3_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changefragment"
+        android:text="@string/pac2"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/f4_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="changefragment"
+        android:text="@string/pac5"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+
+    <fragment
+        android:id="@+id/fgmntDefault"
+        android:name="com.example.sightseeen.Fragment1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

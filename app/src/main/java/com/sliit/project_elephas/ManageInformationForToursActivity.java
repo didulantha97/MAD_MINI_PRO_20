@@ -40,7 +40,7 @@ public class ManageInformationForToursActivity extends AppCompatActivity {
     }
 
     public void openActivity2(){
-        Intent intent2 = new Intent(this,other_cost_details.class);
+        Intent intent2 = new Intent(this,Other_Coast_Details.class);
         startActivity(intent2);
     }
 }

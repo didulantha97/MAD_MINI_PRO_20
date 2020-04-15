@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/sight2" />
 
     <Button
-        android:id="@+id/dubut3"
+        android:id="@+id/s1_btn"
         android:layout_width="413dp"
         android:layout_height="68dp"
         android:layout_marginStart="45dp"
@@ -42,13 +42,12 @@
         android:layout_marginEnd="47dp"
         android:layout_marginRight="47dp"
         android:background="#509AAD"
-        android:onClick="tapToBounce"
         android:scrollbarStyle="outsideOverlay"
         android:shadowColor="@color/colorPrimaryDark"
         android:text="@string/sightseenpagebut1"
         android:textColor="#111010"
         android:textStyle="bold"
-        app:backgroundTint="@color/colorAccentDark"
+        android:onClick="tapToBounce"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +55,7 @@
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/dubut4"
+        android:id="@+id/s2_btn"
         android:layout_width="413dp"
         android:layout_height="70dp"
         android:layout_marginTop="32dp"
@@ -66,14 +65,13 @@
         android:text="@string/sightseenpagebut2"
         android:textColor="#111010"
         android:textStyle="bold"
-        app:backgroundTint="@color/colorAccentDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dubut3" />
+        app:layout_constraintTop_toBottomOf="@+id/s1_btn" />
 
     <Button
-        android:id="@+id/dubut5"
+        android:id="@+id/s3_btn"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="412dp"
         android:layout_height="73dp"
@@ -84,10 +82,8 @@
         android:text="@string/sightseenpagebut3"
         android:textColor="#111010"
         android:textStyle="bold"
-        app:backgroundTint="@color/colorAccentDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dubut4" />
-
+        app:layout_constraintTop_toBottomOf="@+id/s2_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

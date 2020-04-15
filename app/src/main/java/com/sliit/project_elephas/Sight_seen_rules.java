@@ -1,14 +1,16 @@
 package com.sliit.project_elephas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class test extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Sight_seen_rules extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_sight_seen_rules);
     }
+
 }

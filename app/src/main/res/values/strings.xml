@@ -137,6 +137,7 @@
     <string name="txtListOfRequirement">List of Requirements</string>
 
     <string name="app_name_dula">Sight Seeen</string>
+//Dula
     <string name="mainpagelable1"><![CDATA[Sight Seen Coast & Other Coast Packages]]></string>
     <string name="page1but1">Sight Seen</string>
     <string name="pageonebut2">Other Coast Details</string>
@@ -170,7 +171,12 @@
     <string name="rule3">Banks</string>
     <string name="ruled3">Banks are open from 0900 hrs to 1300 hours Monday to Friday. Some city banks close at 1500 hrs, while some are open on Saturday mornings. It.s easy to withdraw money across the island at ATMs using international credit cards or debit cards.</string>
     <string name="previous3"><![CDATA[<<Previous]]></string>
+    <string name="title">Title</string>
     <string name="next4"><![CDATA[Next>>]]></string>
+    <string name="f1">Fragment1</string>
+    <string name="f2">Fragment2</string>
+    <string name="ms1">This is fragment 1</string>
+    <string name="ms2">This is fragment 2</string>
     <string name="basicrule">Sight Seen Rule</string>
     <string name="basicrule1"><![CDATA[Photo Permits & Entrance Charges]]></string>
     <string name="basicruled1">Sri Lanka is a photographer’s delight. However, permits are required before you can take photos at certain sites. Entrance tickets to individual sites are available only from 6 a.m. to 10 a.m. These tickets cover charges for photography, recording and parking.Rates are quoted in US Dollars and rupee parities are subject to fluctuation.</string>
@@ -210,5 +216,34 @@
     <string name="otherpacmsg">This page shows the details about the other cost package details. Ex-Birth day party packages Valantime packages wedding packages Sim card offers Medical packages... This packages auto genarate by geting details from the Data Base. So with out creating Data Base this page can not see now.To create this page i will use CUSTOM LISTVIEW layout.</string>
     <string name="othercostmsg1">This page shows the details about the other cost package details. Ex-Birth day party packages,Valantine packages,wedding packages,Sim card offers,Medical packages... This packages auto genarate by geting details from the Data Base. So with out creating Data Base this page can not see now.To create this page i will use CUSTOM LISTVIEW layout.</string>
     <string name="othercostmseg1">This page shows the details about the other cost package details. Ex-Birth day party packages,Valantine packages,wedding packages,Sim card offers,Medical packages... This packages auto genarate by geting details from the Data Base. So with out creating Data Base this page can not see now.To create this page i will use CUSTOM LISTVIEW layout.</string>
-
+    <string name="show">Show</string>
+    <string name="updatebtn">Update</string>
+    <string name="deletebutn">Delete</string>
+    <string name="sellectall">Sellect All</string>
+    <string name="sellectallbut">Select all Other Packages</string>
+    <string name="updatebut3">Update</string>
+    <string name="deletepackages">Delete</string>
+    <string name="newvewall">View All Packages</string>
+    <string name="search">Search</string>
+    <string name="etailscrud">DEtails for new admin about how to insert,delete and update details</string>
+    <string name="packagenonew">Package No(Enter Integer No)</string>
+    <string name="otherpackagemenu">Other Package Menue</string>
+    <string name="ode">Other Package details with price and Add new Packages</string>
+    <string name="dinerpac">Dinner Packages</string>
+    <string name="bdyapac">B\'Day Packages</string>
+    <string name="fm1">changeFragment</string>
+    <string name="package1">B\'Day Party Packeges</string>
+    <string name="pac2">Wedding Packages</string>
+    <string name="pac3">Dinner Packages</string>
+    <string name="pac5">Medecine Packages</string>
+    <string name="b1">B\'Day Party Packages</string>
+    <string name="pa1">B\'DAy Party Packages</string>
+    <string name="p11">BBHJ\nguh\nffcgvhbjkl</string>
+    <string name="pacd1">B\'Day Pary Packages \n 5 person package - 2500 \n 10 person package - 3500 \n 15 person package - 7500 \n 25 person package 12000 \n 30 person package - 20000 \n</string>
+    <string name="pfd1">\n\nB\'Day Pary Packages \n  \n 5 person package - 2500 \n \n 10 person package - 3500 \n \n 15 person package - 7500 \n \n 25 person package - 12000 \n\n 30 person package - 20000 \n\n</string>
+    <string name="pf2">"\n \n Dinner Packages \n \n \n  outdoor  5 person package - 85000 \n \n outdoor  10  person package - 12000 \n \n outdoor  15 person package - 15000 \n \n outdoor  20 person package - 20000 \n \n Indoor 5 person package - 75000 \n \n Indoor 10 person package - 12000 \n \n  "</string>
+    <string name="pacwed">Wedding pacakages \n \n \n  10 person package - 25000 (With offers) \n \n  20 person package - 35000 \n \n Special Gift(Ring) - 125000 \n \n Special gift(Ring with gold) - 10000\n\n</string>
+    <string name="medpac">"Medicine Packages \n \n  Chaneling a doctor - 1500 \n \n Basic Medicine Package For Month (4 Person ) - 3000 \n \n Hospital charges for per person for one day - 1000\n \n "</string>
+    <string name="sightmenu">Our Avalable Sight Seens  Packages in Sri Lanka</string>
+    <string name="bsa">Show All</string>
 </resources>
