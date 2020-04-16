@@ -1,8 +1,14 @@
 package com.sliit.project_elephas;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +17,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String CHANNEL_ID = "ChannelOne";
     DatabaseHelper mDatabaseHelper;
     EditText UserOrAdmin,Password;
     Button btnSignIn;
@@ -25,6 +32,22 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
 
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
+
+
+        //notification
+        //channel
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);     // Register the channel with the system; you can't change the importance     // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            assert notificationManager != null;
+            notificationManager.createNotificationChannel(channel);
+
+        }
+
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,47 +78,64 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Invalid Credentials !",Toast.LENGTH_SHORT).show(); //display message
             } else  {
                 //then the admin is found and it's login credentials are valid
-                Intent intent = new Intent(getApplicationContext(),AfterLoginActivityAdminView.class);
+
+                // notification    //Create an explicit intent for an Activity in your app
+                Intent intent = new Intent(getApplicationContext(), AfterLoginActivityAdminView.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("ADMIN_ID", thisAdmin.getId());
                 intent.putExtra("ADMIN_PASSPORT_NO", thisAdmin.getPassportno());
                 intent.putExtra("ADMIN_EMAIL", thisAdmin.getEmail());
                 intent.putExtra("ADMIN_NAME", thisAdmin.getName());
-                startActivity(intent);
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT); //flag: 0 then changed PendingIntent.FLAG_UPDATE_CURRENT, we should make it to pass values via intent
+
+                // Toast message //alert user to check the notification
+                Toast.makeText(getApplicationContext(),"Welcome! Please click on the notification",Toast.LENGTH_SHORT).show(); //display message
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("Welcome!").setContentText("Hello! "+ thisAdmin.getName() + ", Welcome to Elephas Vacation").setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+                notificationManager.notify(0, builder.build());
+
+
+/*                Intent intent = new Intent(getApplicationContext(),AfterLoginActivityAdminView.class);
+                intent.putExtra("ADMIN_ID", thisAdmin.getId());
+                intent.putExtra("ADMIN_PASSPORT_NO", thisAdmin.getPassportno());
+                intent.putExtra("ADMIN_EMAIL", thisAdmin.getEmail());
+                intent.putExtra("ADMIN_NAME", thisAdmin.getName());
+                startActivity(intent);*/
             }
         } else {
             //then the customer is found and it's login credentials are valid
-            Intent intent = new Intent(getApplicationContext(),AfterLoginCustomerActivity.class);
+
+            // notification    //Create an explicit intent for an Activity in your app
+            Intent intent = new Intent(getApplicationContext(), AfterLoginCustomerActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.putExtra("CUSTOMER_ID", thisCustomer.getId());
+            intent.putExtra("CUSTOMER_PASSPORT_NO", thisCustomer.getPassportno());
+            intent.putExtra("CUSTOMER_EMAIL", thisCustomer.getEmail());
+            intent.putExtra("CUSTOMER_NAME", thisCustomer.getName());
+            PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT); //flag: 0 then changed PendingIntent.FLAG_UPDATE_CURRENT, we should make it to pass values via intent
+
+            // Toast message //alert user to check the notification
+            Toast.makeText(getApplicationContext(),"Welcome! Please click on the notification",Toast.LENGTH_SHORT).show(); //display message
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("Welcome!").setContentText("Hello! "+ thisCustomer.getName() + ", Welcome to Elephas Vacation").setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+            notificationManager.notify(0, builder.build());
+
+
+
+
+/*            Intent intent = new Intent(getApplicationContext(),AfterLoginCustomerActivity.class);
             intent.putExtra("CUSTOMER_ID", thisCustomer.getId());
             intent.putExtra("CUSTOMER_PASSPORT_NO", thisCustomer.getPassportno());
             intent.putExtra("CUSTOMER_EMAIL", thisCustomer.getEmail());
             intent.putExtra("CUSTOMER_NAME", thisCustomer.getName());
             //intent.putExtra("CUSTOMER_OBJECT",thisCustomer);
-            startActivity(intent);
+            startActivity(intent);*/
         }
 
     }
 
-
-
-/*    public void sendDataToOtherScreen(View view){
-
-        //should check here if the user is an admin or a customer
-        //if user = admin then go to AfterLoginActivityAdminView
-        //else user = customer then go to AfterLoginCustomerActivity
-        //to view the admin view please change AfterLoginCustomerActivity.class to AfterLoginActivityAdminView.class
-        //this user account management part is under construction
-        Intent intent = new Intent(this,AfterLoginCustomerActivity.class);
-        EditText editTextForUsername = findViewById(R.id.editText);
-        EditText editTextForPassword = findViewById(R.id.editText2);
-        String username = editTextForUsername.getText().toString();
-        String password = editTextForPassword.getText().toString();
-        intent.putExtra("UserName", username);
-        intent.putExtra("Password", password);
-        startActivity(intent);
-
-    }
-
- */
 
     public void redirectToRegistrationActivity(View view){
 
