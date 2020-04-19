@@ -187,4 +187,9 @@
     <string name="txtSampleDataForRequirementID">Sample Requirement ID 1</string>
     <string name="txtSampleDataForPassPort">SLXXX1</string>
     <string name="txtSampleDataForNationality">Indian</string>
+
+
+    // notification - Dhanusha
+    <string name="channel_name">Labsheet4</string>
+    <string name="channel_description">Channel for the notification</string>
 </resources>
