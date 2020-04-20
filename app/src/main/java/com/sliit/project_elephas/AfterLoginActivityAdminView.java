@@ -1,12 +1,15 @@
 package com.sliit.project_elephas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.sliit.project_elephas.activities.Activity_manage_cost;
+import com.sliit.project_elephas.hasinthi.HotelMangement;
 
 public class AfterLoginActivityAdminView extends AppCompatActivity {
 
@@ -16,6 +19,7 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
     private static String ADMIN_EMAIL = null;
     Button btnViewData;
     Button payments_manage;
+    Button btnHotelmange;
     TextView textViewAdminNameDisplay;
 
     @Override
@@ -24,6 +28,15 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
         setContentView(R.layout.activity_after_login_admin_view);
 
         payments_manage = (Button)findViewById(R.id.button7);
+        btnHotelmange = (Button)findViewById(R.id.button5);
+
+        btnHotelmange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hotelintent = new Intent(AfterLoginActivityAdminView.this, HotelMangement.class);
+                startActivity(hotelintent);
+            }
+        });
 
         payments_manage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,5 +84,7 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
 
 }

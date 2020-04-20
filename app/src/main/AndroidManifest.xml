@@ -18,7 +18,6 @@
         <activity android:name=".sight_seen_details_page" />
         <activity android:name=".add_new_sight" />
         <activity android:name=".sightseen" />
-        <activity android:name=".Main_Activity_Dula" />
         <activity android:name=".activities.Activity_man_cost_mange"></activity>
         <activity android:name=".activities.Activity_transport_manage" />
         <activity android:name=".activities.Activity_manage_cost" />
@@ -45,6 +44,12 @@
         <activity android:name=".activities.Payment_manage" />
         <activity android:name=".activities.Payment" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".hasinthi.ViewHotelDetails"></activity>
+        <activity android:name=".hasinthi.HotelMangement" />
+        <activity android:name=".hasinthi.HotelManagementForm" />
+        <activity android:name=".hasinthi.MainActivity">
+        </activity>
+
     </application>
 
 </manifest>

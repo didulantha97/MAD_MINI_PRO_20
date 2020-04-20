@@ -32,10 +32,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/payment" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/payment"
         android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
@@ -47,16 +47,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="395dp"
+        android:layout_width="363dp"
         android:layout_height="wrap_content"
         android:text="@string/txtEnterRequirements"
         android:textColor="@android:color/background_light"
         app:backgroundTint="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/payment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,17 +91,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/elephas_icon" />
 
-    <Button
-        android:id="@+id/button18"
-        android:layout_width="363dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:text="@string/payment"
-        app:backgroundTint="@color/design_default_color_secondary_variant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
