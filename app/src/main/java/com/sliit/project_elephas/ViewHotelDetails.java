@@ -1,4 +1,4 @@
-package com.example.elephasvacation;
+package com.sliit.project_elephas;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,14 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.sliit.project_elephas.MainActivity;
-import com.sliit.project_elephas.R;
 
 import static com.sliit.project_elephas.R.id.editText;
 import static com.sliit.project_elephas.R.id.editText2;
@@ -24,10 +20,9 @@ import static com.sliit.project_elephas.R.id.editText3;
 import static com.sliit.project_elephas.R.id.editText5;
 import static com.sliit.project_elephas.R.id.editText6;
 
-public class ViewHotelDetails extends AppCompatActivity {
+public class ViewHotelDetails extends AppCompatActivity{
 
-
-    private com.example.elephasvacation.DBHelper mydb ;
+    private DBHelper mydb ;
 
     TextView name ;
     TextView address;
@@ -58,7 +53,7 @@ public class ViewHotelDetails extends AppCompatActivity {
         starclass = (TextView) findViewById(editText5);
         single = (TextView) findViewById(editText6);
         Double = (TextView) findViewById(R.id.editText7);
-        triple = (EditText) findViewById(R.id.editText8);
+        triple = (TextView) findViewById(R.id.editText8);
         king = (TextView) findViewById(R.id.editText10);
         quard = (TextView) findViewById(R.id.editText9);
         queen = (TextView) findViewById(R.id.editText11);
@@ -68,7 +63,7 @@ public class ViewHotelDetails extends AppCompatActivity {
         halfboard = (TextView) findViewById(R.id.editText14);
 
 
-        mydb = new com.example.elephasvacation.DBHelper(this);
+        mydb = new DBHelper(this);
 
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
@@ -80,21 +75,21 @@ public class ViewHotelDetails extends AppCompatActivity {
                 id_To_Update = Value;
                 rs.moveToFirst();
 
-                String nam = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String addres = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String phon = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String emai= rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String starclas = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String singl = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String Doubl = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String tripl = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String kin = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String quar = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String quee = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String roomonl = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String bedandbreackfas = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String fullboar = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
-                String halfboar = rs.getString(rs.getColumnIndex(com.example.elephasvacation.DBHelper.Hotel_COLUMN_NAME));
+                String nam = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String addres = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String phon = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String emai= rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String starclas = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String singl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String Doubl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String tripl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String kin = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String quar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String quee = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String roomonl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String bedandbreackfas = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String fullboar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+                String halfboar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
 
 
                 if (!rs.isClosed())  {
@@ -263,7 +258,7 @@ public class ViewHotelDetails extends AppCompatActivity {
                                 mydb.deleteHotel(id_To_Update);
                                 Toast.makeText(getApplicationContext(), "Deleted Successfully",
                                         Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                                 startActivity(intent);
                             }
                         })
@@ -313,5 +308,6 @@ public class ViewHotelDetails extends AppCompatActivity {
             }
         }
     }
+
 
 }

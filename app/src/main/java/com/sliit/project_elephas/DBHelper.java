@@ -1,4 +1,4 @@
-package com.example.elephasvacation;
+package com.sliit.project_elephas;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

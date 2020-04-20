@@ -30,7 +30,7 @@ public class HotelMangement extends AppCompatActivity {
         ViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotelMangement.this, com.example.elephasvacation.ViewHotelDetails.class);
+                Intent intent = new Intent(HotelMangement.this, ViewHotelDetails.class);
                 startActivity(intent);
             }
         });
