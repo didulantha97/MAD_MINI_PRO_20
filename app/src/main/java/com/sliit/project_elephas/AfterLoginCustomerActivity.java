@@ -1,13 +1,11 @@
 package com.sliit.project_elephas;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sliit.project_elephas.activities.all_customer_payments;
 
@@ -16,7 +14,7 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
     private static String PASSPORT_NO = null;
     DatabaseHelper mDatabaseHelper;
     Button btnViewAll;
-    Button payment;
+    Button payment, requirements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +27,27 @@ public class AfterLoginCustomerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AfterLoginCustomerActivity.this, all_customer_payments.class);
+                startActivity(intent);
+            }
+        });
+
+        requirements = (Button) findViewById(R.id.button2);
+        requirements.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AfterLoginCustomerActivity.this,CustomerReqGatheringActivity.class);
+
+                //intent.putExtra("CUSTOMER_ID",);
+                intent.putExtra("CUSTOMER_PASSPORT_NO",PASSPORT_NO);
+                //intent.putExtra("CUSTOMER_EMAIL", );
+                //intent.putExtra("CUSTOMER_NAME",);
+
+                // EditText editTextForUsername = findViewById(R.id.editText);
+                //   EditText editTextForPassword = findViewById(R.id.editText2);
+                //String username = editTextForUsername.getText().toString();
+                // String password = editTextForPassword.getText().toString();
+                // intent.putExtra("UserName", username);
+                // intent.putExtra("Password", password);
                 startActivity(intent);
             }
         });

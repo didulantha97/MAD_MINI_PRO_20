@@ -11,12 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".test"></activity>
         <activity android:name=".other_packages" />
-        <activity android:name=".other_cost_details" />
-        <activity android:name=".sight_seen_rules" />
-        <activity android:name=".sight_seen_basic_rule2" />
-        <activity android:name=".sight_seen_basic_rule" />
-        <activity android:name=".sight_seen_details_page" />
-        <activity android:name=".add_new_sight" />
+        <activity android:name=".Other_Coast_Details" />
+        <activity android:name=".Sight_seen_rules" />
+        <activity android:name=".Sight_Seen_Basic_Rule2" />
+        <activity android:name=".Sight_Seen_Basic_Rule" />
+        <activity android:name=".Sight_Seen_Details_Page" />
+        <activity android:name=".Add_new_sight" />
         <activity android:name=".sightseen" />
         <activity android:name=".activities.Activity_man_cost_mange"></activity>
         <activity android:name=".activities.Activity_transport_manage" />
@@ -49,6 +49,8 @@
         <activity android:name=".hasinthi.HotelManagementForm" />
         <activity android:name=".hasinthi.MainActivity">
         </activity>
+
+
 
     </application>
 
