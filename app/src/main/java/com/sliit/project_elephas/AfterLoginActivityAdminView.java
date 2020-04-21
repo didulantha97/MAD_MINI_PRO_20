@@ -18,6 +18,7 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
     private static String ADMIN_PASSPORT_NO = null;
     private static String ADMIN_EMAIL = null;
     Button btnViewData;
+    Button btnManageInfoForTours;
     Button payments_manage;
     Button btnHotelmange;
     TextView textViewAdminNameDisplay;
@@ -28,7 +29,26 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
         setContentView(R.layout.activity_after_login_admin_view);
 
         payments_manage = (Button)findViewById(R.id.button7);
-        btnHotelmange = (Button)findViewById(R.id.button5);
+        btnManageInfoForTours = (Button)findViewById(R.id.button5); //MANAGE INFORMATION FOR TOURS BUTTON
+
+        //MANAGE INFORMATION FOR TOURS BUTTON
+        //We should redirect to ManageInformationForToursActivity.class
+        btnManageInfoForTours.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ManageInformationForToursActivity.class);
+                intent.putExtra("ADMIN_ID",ADMIN_ID);
+                intent.putExtra("ADMIN_PASSPORT_NO",ADMIN_PASSPORT_NO);
+                intent.putExtra("ADMIN_EMAIL",ADMIN_EMAIL);
+                intent.putExtra("ADMIN_NAME",ADMIN_NAME);
+                startActivity(intent);
+            }
+        });
+
+
+        // I commented this(below) code segment - Dhanusha
+        // Because we do not want to redirect to Hashinthi's part.. first we redirect to ManageInformationForToursActivity.class
+/*        btnHotelmange = (Button)findViewById(R.id.button5);
 
         btnHotelmange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +56,7 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
                 Intent hotelintent = new Intent(AfterLoginActivityAdminView.this, HotelMangement.class);
                 startActivity(hotelintent);
             }
-        });
+        });*/
 
         payments_manage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +89,8 @@ public class AfterLoginActivityAdminView extends AppCompatActivity {
         });
     }
 
+
+    // This method, do not touch it.. it will be useless for right now but I have used it before
     public void redirectWithDataToManageInformationForTours(View view){
         Intent intent = new Intent(this,ManageInformationForToursActivity.class);
         intent.putExtra("ADMIN_ID",ADMIN_ID);

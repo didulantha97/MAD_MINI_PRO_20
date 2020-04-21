@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test"></activity>
+        <activity android:name=".test" />
+        <activity android:name=".Main_Activity_Dula" />
         <activity android:name=".other_packages" />
         <activity android:name=".Other_Coast_Details" />
         <activity android:name=".Sight_seen_rules" />
@@ -18,7 +19,7 @@
         <activity android:name=".Sight_Seen_Details_Page" />
         <activity android:name=".Add_new_sight" />
         <activity android:name=".sightseen" />
-        <activity android:name=".activities.Activity_man_cost_mange"></activity>
+        <activity android:name=".activities.Activity_man_cost_mange" />
         <activity android:name=".activities.Activity_transport_manage" />
         <activity android:name=".activities.Activity_manage_cost" />
         <activity android:name=".activities.Activity_man_cost" />
@@ -34,6 +35,7 @@
         <activity android:name=".CustomerReqGatheringActivity" />
         <activity android:name=".AfterLoginCustomerActivity" />
         <activity android:name=".AfterLoginActivityAdminView" />
+        <activity android:name=".ManageInformationForToursActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +46,7 @@
         <activity android:name=".activities.Payment_manage" />
         <activity android:name=".activities.Payment" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".hasinthi.ViewHotelDetails"></activity>
+        <activity android:name=".hasinthi.ViewHotelDetails" />
         <activity android:name=".hasinthi.HotelMangement" />
         <activity android:name=".hasinthi.HotelManagementForm" />
         <activity android:name=".hasinthi.MainActivity">
