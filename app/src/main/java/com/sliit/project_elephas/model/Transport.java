@@ -1,6 +1,7 @@
 package com.sliit.project_elephas.model;
 
 public class Transport {
+
     int ID;
     int passport;
     double grossMileage;

@@ -1,34 +1,23 @@
 package com.sliit.project_elephas.hasinthi;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sliit.project_elephas.R;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
 
-    public final static String EXTRA_MESSAGE = "MESSAGE";
+ /*   public final static String EXTRA_MESSAGE = "MESSAGE";
     private ListView obj;
-    DBHelper mydb;
+    DatabaseHelper mydb;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hasinthi);
 
-
+/*
         mydb = new DBHelper(this);
         ArrayList array_list = mydb.getAllViewHotelDetails();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
@@ -49,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtras(dataBundle);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
+    /*public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main_manu, menu);
         return true;
@@ -81,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);
         }
         return super.onKeyDown(keycode, event);
-    }
+    }*/
 
 
 }

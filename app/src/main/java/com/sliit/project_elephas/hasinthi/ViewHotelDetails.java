@@ -1,31 +1,15 @@
 package com.sliit.project_elephas.hasinthi;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sliit.project_elephas.R;
 
-import static com.sliit.project_elephas.R.id.editText;
-import static com.sliit.project_elephas.R.id.editText2;
-import static com.sliit.project_elephas.R.id.editText3;
-import static com.sliit.project_elephas.R.id.editText5;
-import static com.sliit.project_elephas.R.id.editText6;
-
 public class ViewHotelDetails extends AppCompatActivity {
 
 
-    private DBHelper mydb ;
+    /*private DBHelper mydb ;
 
     TextView name ;
     TextView address;
@@ -43,13 +27,13 @@ public class ViewHotelDetails extends AppCompatActivity {
     TextView fullboard;
     TextView halfboard;
     int id_To_Update = 0;
-    private Object CharSequence;
+    private Object CharSequence;*/
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_hotel_details);
 
-        name = (TextView) findViewById(editText);
+        /*name = (TextView) findViewById(editText);
         address= (TextView) findViewById(editText2);
         phone = (TextView) findViewById(editText3);
         email = (TextView) findViewById(R.id.editText4);
@@ -63,10 +47,10 @@ public class ViewHotelDetails extends AppCompatActivity {
         bedandbreackfast= (TextView) findViewById(R.id.editText16);
         roomonly= (TextView) findViewById(R.id.editText12);
         fullboard = (TextView) findViewById(R.id.editText15);
-        halfboard = (TextView) findViewById(R.id.editText14);
+        halfboard = (TextView) findViewById(R.id.editText14);*/
 
 
-        mydb = new DBHelper(this);
+       /* mydb = new DBHelper(this);
 
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
@@ -160,14 +144,14 @@ public class ViewHotelDetails extends AppCompatActivity {
 
                 halfboard.setText((CharSequence)halfboar);
                 halfboard.setFocusable(false);
-                halfboard.setClickable(false);
+                halfboard.setClickable(false);*/
 
 
             }
-        }
+
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
+    /*public boolean onCreateOptionsMenu(Menu menu) {
 
         Bundle extras = getIntent().getExtras();
 
@@ -311,5 +295,5 @@ public class ViewHotelDetails extends AppCompatActivity {
             }
         }
     }
+*/
 
-}
