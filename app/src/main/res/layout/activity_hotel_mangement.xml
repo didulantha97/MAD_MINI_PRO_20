@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1D2E2C"
+    android:background="#F1F6F6"
     tools:context=".HotelMangement">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="358dp"
         android:layout_height="66dp"
-        android:background="#D1F4A7"
+        android:background="#55B657"
         android:text="Elephas Vacation"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/textView21"
         android:layout_width="192dp"
         android:layout_height="35dp"
-        android:background="#E6FACF"
+        android:background="#A0BF7C"
         android:text="Hotel Management"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
