@@ -45,7 +45,7 @@ public class sightseen extends AppCompatActivity {
         });
     }
     public void onBackPressed(){
-        Intent intent2 = new Intent(this, MainActivity.class);
+        Intent intent2 = new Intent(this, Main_Activity_Dula.class);
         startActivity(intent2);
         super.onBackPressed();
         finish();

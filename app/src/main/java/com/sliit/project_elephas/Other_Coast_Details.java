@@ -36,7 +36,12 @@ public class Other_Coast_Details extends AppCompatActivity {
             }
         });
     }
-
+    public void onBackPressed(){
+        Intent intent2 = new Intent(this, Main_Activity_Dula.class);
+        startActivity(intent2);
+        super.onBackPressed();
+        finish();
+    }
     public void openActivity1(){
         Intent intent1 = new Intent(this,other_packages.class);
         startActivity(intent1);

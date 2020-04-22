@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".test" />
+        <activity android:name=".Admin_Access_OtherCostPackages"></activity>
+        <activity android:name=".AdminAccessSightSeen" />
         <activity android:name=".Main_Activity_Dula" />
         <activity android:name=".other_packages" />
         <activity android:name=".Other_Coast_Details" />
@@ -19,6 +21,8 @@
         <activity android:name=".Sight_Seen_Basic_Rule" />
         <activity android:name=".Sight_Seen_Details_Page" />
         <activity android:name=".Add_new_sight" />
+        <activity android:name=".Add_New_Cost" />
+
         <activity android:name=".sightseen" />
         <activity android:name=".activities.Activity_man_cost_mange" />
         <activity android:name=".activities.Activity_transport_manage" />

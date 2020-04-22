@@ -45,7 +45,8 @@
 
     <fragment
         android:id="@+id/fgmntDefault"
-        android:name="com.example.sightseeen.Fragment1"
+        android:name="com.sliit.project_elephas.Fragment1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="520dp" />
+
 </LinearLayout>

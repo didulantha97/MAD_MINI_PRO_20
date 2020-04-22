@@ -44,6 +44,14 @@ public class Main_Activity_Dula extends AppCompatActivity {
         });
 
     }
+
+    public void onBackPressed(){
+        Intent intent2 = new Intent(this,ManageInformationForToursActivity.class);
+        startActivity(intent2);
+        super.onBackPressed();
+        finish();
+    }
+
     public void openActivity1(){
         Intent intent = new Intent(this,sightseen.class);
         startActivity(intent);
