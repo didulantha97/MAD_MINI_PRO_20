@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 //import com.google.firebase.database.DatabaseReference;
 
 public class Main_Activity_Dula extends AppCompatActivity {
+
     private Button but1;
     private Button but2;
     private Button but3;
@@ -45,21 +46,15 @@ public class Main_Activity_Dula extends AppCompatActivity {
 
     }
 
-    public void onBackPressed(){
-        Intent intent2 = new Intent(this,ManageInformationForToursActivity.class);
-        startActivity(intent2);
-        super.onBackPressed();
-        finish();
-    }
-
     public void openActivity1(){
         Intent intent = new Intent(this,sightseen.class);
         startActivity(intent);
     }
 
     public void openActivity2(){
-        Intent intent2 = new Intent(this,Other_Coast_Details.class);
-        startActivity(intent2);
+        Intent intent = new Intent(this,Other_Coast_Details.class);
+
+        startActivity(intent);
     }
 
 }

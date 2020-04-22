@@ -12,6 +12,7 @@ import android.widget.Button;
 import java.lang.annotation.Annotation;
 
 public class sightseen extends AppCompatActivity {
+
     private Button but1;
     private Button but2;
     private Button but3;
@@ -20,6 +21,8 @@ public class sightseen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sightseen);
+
+        //button
         but1=(Button)findViewById(R.id.s1_btn);
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,13 +48,15 @@ public class sightseen extends AppCompatActivity {
         });
     }
     public void onBackPressed(){
-        Intent intent2 = new Intent(this, Main_Activity_Dula.class);
+        Intent intent2 = new Intent(this, ManageInformationForToursActivity.class);
         startActivity(intent2);
         super.onBackPressed();
         finish();
     }
+
     public void openActivity1(){
-        Intent intent1 = new Intent(this,AdminAccessSightSeen.class);
+        //Intent intent1 = new Intent(this,AdminAccessSightSeen.class);
+        Intent intent1 = new Intent(this,Add_new_sight.class);
         startActivity(intent1);
 
     }

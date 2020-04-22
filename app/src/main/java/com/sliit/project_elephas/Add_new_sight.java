@@ -1,8 +1,12 @@
 package com.sliit.project_elephas;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +15,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.sliit.project_elephas.Database.DBHelperForSightSeen;
 
 public class Add_new_sight extends AppCompatActivity {
+
+    private static final String CHANNEL_ID ="A001" ;
 
     Button select_all, add, delete, update,details,back;
     EditText sightNo,sightName,childTicPrice,adultTicPrice;
@@ -23,6 +31,20 @@ public class Add_new_sight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_sight);
+
+        //notification
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            //Register the channel with the system;you can't change the importance
+            //or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
 
 
         sightDB = new DBHelperForSightSeen(this);
@@ -69,12 +91,27 @@ public void onBackPressed(){
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!(sightNo.getText().toString().equals("")||sightName.getText().toString().equals("") || childTicPrice.getText().toString().equals("") || adultTicPrice.getText().toString().equals(""))){
-                    boolean val = sightDB.insertDartaSight(sightNo.getText().toString(),sightName.getText().toString(), childTicPrice.getText().toString(), adultTicPrice.getText().toString());
-                    if(val == true)
-                        Toast.makeText(Add_new_sight.this, "New sight seen details added successfully ", Toast.LENGTH_SHORT).show();
-                    else
+                if(!(sightNo.getText().toString().equals("")||sightName.getText().toString().equals("") || childTicPrice.getText().toString().equals("") || adultTicPrice.getText().toString().equals(""))) {
+                    boolean val = sightDB.insertDartaSight(sightNo.getText().toString(), sightName.getText().toString(), childTicPrice.getText().toString(), adultTicPrice.getText().toString());
+                        if (val == true)    {
+                                Toast.makeText(Add_new_sight.this, "New sight seen details added successfully ", Toast.LENGTH_SHORT).show();
+
+                                //notification should be triggered here
+                                final String message = "Hello! Welcome to Elephas App.Only Admins can add new Sight Seen details.Others Can not Add data.Only Admins are allowed to add data.If you are admin, you can access the add sight seen page by clicking this notification.";
+
+                                Intent intent = new Intent(getApplicationContext(), sightseen.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0,intent, 0);
+                                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("My notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+
+                                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
+                                // notificationId is a uniqu int for each notification that you must define
+                                notificationManager.notify(0, builder.build());
+                    }
+                    else {
                         Toast.makeText(Add_new_sight.this, "Data already exists. ", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
                 else
