@@ -1,7 +1,5 @@
 package com.sliit.project_elephas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.sliit.project_elephas.R;
 import com.sliit.project_elephas.sql.DBHelper;
 
 public class HotelManagementForm extends AppCompatActivity {
@@ -63,7 +60,7 @@ public class HotelManagementForm extends AppCompatActivity {
         buttonSave = (Button) findViewById(R.id.button);
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
 
 

@@ -7,13 +7,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.sliit.project_elephas.R;
-
 public class HotelMangement extends AppCompatActivity {
 
     Button addHotel, viewHotel;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_mangement);
