@@ -3,9 +3,11 @@ package com.sliit.project_elephas.sql;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.sliit.project_elephas.Hotel;
 import com.sliit.project_elephas.model.Driver;
 import com.sliit.project_elephas.model.Invoice;
 import com.sliit.project_elephas.model.Payments;
@@ -529,6 +531,189 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+
+
+
+
+
+
+    public boolean addHotelDetails(Hotel hotel) {
+
+        try {
+            // Gets the data repository in write mode
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            // Create a new map of values, where column names are the keys
+            ContentValues values = new ContentValues();
+
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_NAME, hotel.getName());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_Address, hotel.getAddress());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_EMAIL, hotel.getEmail());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_PHONE, hotel.getPhone());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_STARCLASS, hotel.getStarclass());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_SINGLE, hotel.getSingle());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_DOUBLE, hotel.getDouble());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_TRIPLE, hotel.getTriple());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_KING, hotel.getKing());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUARD, hotel.getQuard());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUEEN, hotel.getQueen());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_ROOMONLY, hotel.getRoomonly());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_BEDANDBREACKFAST, hotel.getBedandbreackfast());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_FULLBOARD, hotel.getFullboard());
+            values.put(Database_hotel.hotelEntry.Hotel_COLUMN_HALFBOARD, hotel.getHalfboard());
+
+            long newRowId = db.insert(Database_hotel.hotelEntry.TABLE_HOTEL, null, values);
+
+            return newRowId != -1;
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        // Insert the new row, returning the primary key value of the new row
+        return true;
+    }
+
+    //read payment ID to spinner
+    public ArrayList<Hotel> readAllHotels(){
+
+        ArrayList<Hotel> models= new ArrayList<>();
+
+        SQLiteDatabase score = this.getReadableDatabase();
+
+        Cursor results = score.rawQuery("select * from "+ Database_hotel.hotelEntry.TABLE_HOTEL,null);
+
+        results.moveToFirst();
+
+        while (!results.isAfterLast()){
+
+            Hotel hotel = new Hotel();
+
+            hotel.setName(results.getString(results.getColumnIndex(Database_hotel.hotelEntry._ID)));
+
+            //driver.setID(results.getInt(results.getColumnIndex(Database_driver.driverEntry._ID)));
+
+            models.add(hotel);
+            results.moveToNext();
+        }
+
+        return models;
+
+    }
+
+    //read data where id equals in spinner
+    public ArrayList<Hotel> selectedHotels(String id){
+
+        ArrayList<Hotel> models= new ArrayList<>();
+
+        SQLiteDatabase scoredb = this.getReadableDatabase();
+        Cursor results = scoredb.rawQuery("select * from "+ Database_hotel.hotelEntry.TABLE_HOTEL +" where "+Database_hotel.hotelEntry._ID +" = '"+id+"'",null);
+        results.moveToFirst();
+
+        while (!results.isAfterLast()){
+
+            Hotel smodel= new Hotel();
+
+            smodel.setName(results.getString(1));
+            smodel.setAddress(results.getString(2));
+            smodel.setEmail(results.getString(3));
+            smodel.setPhone(results.getString(4));
+            smodel.setStarclass(results.getString(5));
+            smodel.setSingle(results.getString(6));
+            smodel.setDouble(results.getString(7));
+            smodel.setTriple(results.getString(8));
+            smodel.setKing(results.getString(9));
+            smodel.setQuard(results.getString(10));
+            smodel.setQueen(results.getString(11));
+            smodel.setRoomonly(results.getString(12));
+            smodel.setBedandbreackfast(results.getString(13));
+            smodel.setFullboard(results.getString(14));
+            smodel.setHalfboard(results.getString(15));
+
+        }
+
+        return models;
+
+    }
+
+   /* //read data where id equals in spinner
+    public ArrayList<Driver> selectedDrivers(String id){
+
+        ArrayList<Driver> models= new ArrayList<>();
+
+        SQLiteDatabase scoredb = this.getReadableDatabase();
+        Cursor results = scoredb.rawQuery("select * from "+ Database_driver.driverEntry.TABLE_DRIVER +" where "+Database_driver.driverEntry._ID +" = '"+id+"'",null);
+        results.moveToFirst();
+
+        while (!results.isAfterLast()){
+
+            Driver smodel= new Driver();
+            smodel.setPassport(results.getInt(1));
+            smodel.setDriver(results.getDouble(2));
+            smodel.setGuide(results.getDouble(3));
+            smodel.setTotal_in_usd(results.getDouble(4));
+            models.add(smodel);
+            results.moveToNext();
+
+        }
+
+        return models;
+
+    }*/
+
+    //Update transport
+    public boolean updateHotel(String id,String name, String address, String email, String phone, String starclass, String single,
+                               String aDouble, String triple, String king, String quard, String queen, String roomonly, String bedandbreackfast,
+                               String fullboard, String halfboard){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues= new ContentValues();
+
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_NAME, name);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_Address, address);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_EMAIL, email);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_PHONE, phone);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_STARCLASS, starclass);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_SINGLE, single);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_DOUBLE, aDouble);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_TRIPLE, triple);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_KING, king);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUARD, quard);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUEEN, queen);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_ROOMONLY, roomonly);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_BEDANDBREACKFAST, bedandbreackfast);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_FULLBOARD, fullboard);
+        contentValues.put(Database_hotel.hotelEntry.Hotel_COLUMN_HALFBOARD, halfboard);
+
+        //contentValues.put("status","Verified");
+
+        long res=db.update(Database_hotel.hotelEntry.TABLE_HOTEL,contentValues,Database_hotel.hotelEntry._ID+" = '"+id+"'",null);
+
+        if(res==-1){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
+    //delete transport
+    public boolean deleteHotel(String id) {
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        long res = db.delete(Database_hotel.hotelEntry.TABLE_HOTEL, Database_hotel.hotelEntry._ID + " = '" + id + "'", null);
+
+        db.close();
+
+        if (res == -1) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 
 
 

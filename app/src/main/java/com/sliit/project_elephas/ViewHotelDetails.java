@@ -1,313 +1,185 @@
 package com.sliit.project_elephas;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.sliit.project_elephas.R.id.editText;
-import static com.sliit.project_elephas.R.id.editText2;
-import static com.sliit.project_elephas.R.id.editText3;
-import static com.sliit.project_elephas.R.id.editText5;
-import static com.sliit.project_elephas.R.id.editText6;
+import com.sliit.project_elephas.sql.DBHelper;
 
-public class ViewHotelDetails extends AppCompatActivity{
+import java.util.ArrayList;
+import java.util.List;
 
-    private DBHelper mydb ;
+public class ViewHotelDetails extends AppCompatActivity {
 
-    TextView name ;
-    TextView address;
-    TextView phone;
-    TextView email;
-    TextView starclass;
-    TextView single;
-    TextView Double;
-    TextView triple;
-    TextView king;
-    TextView quard;
-    TextView queen;
-    TextView roomonly;
-    TextView bedandbreackfast;
-    TextView fullboard;
-    TextView halfboard;
-    int id_To_Update = 0;
-    private Object CharSequence;
+    EditText name, address,
+            email,
+            phone,
+            starclass,
+            single,
+            Double,
+            triple,
+            king,
+            quard,
+            queen,
+            roomonly,
+            bedandbreackfast,
+            fullboard,
+            halfboard;
+
+    Spinner spinner;
+
+    Button update, delete;
+
+    DBHelper db;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_hotel_details);
 
-        name = (TextView) findViewById(editText);
-        address= (TextView) findViewById(editText2);
-        phone = (TextView) findViewById(editText3);
-        email = (TextView) findViewById(R.id.editText4);
-        starclass = (TextView) findViewById(editText5);
-        single = (TextView) findViewById(editText6);
-        Double = (TextView) findViewById(R.id.editText7);
-        triple = (TextView) findViewById(R.id.editText8);
-        king = (TextView) findViewById(R.id.editText10);
-        quard = (TextView) findViewById(R.id.editText9);
-        queen = (TextView) findViewById(R.id.editText11);
-        bedandbreackfast= (TextView) findViewById(R.id.editText16);
-        roomonly= (TextView) findViewById(R.id.editText12);
-        fullboard = (TextView) findViewById(R.id.editText15);
-        halfboard = (TextView) findViewById(R.id.editText14);
+        spinner = (Spinner) findViewById(R.id.spinnerHotel);
+
+        name = (EditText) findViewById(R.id.editText);
+        address = (EditText) findViewById(R.id.editText2);
+        email = (EditText) findViewById(R.id.editText3);
+        phone = (EditText) findViewById(R.id.editText4);
+        starclass = (EditText) findViewById(R.id.editText5);
+        single = (EditText) findViewById(R.id.editText6);
+        Double = (EditText) findViewById(R.id.editText7);
+        triple = (EditText) findViewById(R.id.editText8);
+        king = (EditText) findViewById(R.id.editText10);
+        quard = (EditText) findViewById(R.id.editText9);
+        queen = (EditText) findViewById(R.id.editText11);
+        roomonly = (EditText) findViewById(R.id.editText12);
+        bedandbreackfast = (EditText) findViewById(R.id.editText16);
+        fullboard = (EditText) findViewById(R.id.editText15);
+        halfboard = (EditText) findViewById(R.id.editText14);
+
+        update = (Button) findViewById(R.id.button);
+        delete = (Button) findViewById(R.id.button2);
+
+        db = new DBHelper(this);
+
+        spinnerClass();
 
 
-        mydb = new DBHelper(this);
-
-        Bundle extras = getIntent().getExtras();
-        if(extras !=null) {
-            int Value = extras.getInt("id");
-
-            if(Value>0){
-
-                Cursor rs = mydb.getData(Value);
-                id_To_Update = Value;
-                rs.moveToFirst();
-
-                String nam = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String addres = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String phon = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String emai= rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String starclas = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String singl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String Doubl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String tripl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String kin = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String quar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String quee = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String roomonl = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String bedandbreackfas = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String fullboar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
-                String halfboar = rs.getString(rs.getColumnIndex(DBHelper.Hotel_COLUMN_NAME));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
-                if (!rs.isClosed())  {
-                    rs.close();
+                ArrayList<Hotel> allModels = db.selectedHotels(spinner.getSelectedItem().toString());
+
+                for (int x = 0; allModels.size() > x; x++) {
+
+                    name.setText(allModels.get(x).getName());
+                    address.setText(allModels.get(x).getAddress());
+                    email.setText(allModels.get(x).getEmail());
+                    phone.setText(allModels.get(x).getPhone());
+                    starclass.setText(allModels.get(x).getStarclass());
+                    single.setText(allModels.get(x).getSingle());
+                    Double.setText(allModels.get(x).getDouble());
+                    triple.setText(allModels.get(x).getTriple());
+                    king.setText(allModels.get(x).getKing());
+                    quard.setText(allModels.get(x).getQuard());
+                    queen.setText(allModels.get(x).getQueen());
+                    roomonly.setText(allModels.get(x).getRoomonly());
+                    bedandbreackfast.setText(allModels.get(x).getBedandbreackfast());
+                    fullboard.setText(allModels.get(x).getFullboard());
+                    halfboard.setText(allModels.get(x).getHalfboard());
+
                 }
+            }
 
-                Button b = (Button)findViewById(R.id.button);
-                b.setVisibility(View.INVISIBLE);
-
-                name.setText((CharSequence)nam);
-                name.setFocusable(false);
-                name.setClickable(false);
-
-                address.setText((CharSequence)addres);
-                address.setFocusable(false);
-                address.setClickable(false);
-
-                phone.setText((CharSequence)phon);
-                phone.setFocusable(false);
-                phone.setClickable(false);
-
-                email.setText((CharSequence)emai);
-                email.setFocusable(false);
-                email.setClickable(false);
-
-                starclass.setText((CharSequence)starclas);
-                starclass.setFocusable(false);
-                starclass.setClickable(false);
-
-                single.setText((CharSequence) singl);
-                single.setFocusable(false);
-                single.setClickable(false);
-
-                Double.setText((CharSequence)Doubl);
-                Double.setFocusable(false);
-                Double.setClickable(false);
-
-                triple.setText((CharSequence)tripl);
-                triple.setFocusable(false);
-                triple.setClickable(false);
-
-                king.setText((CharSequence)kin);
-                king.setFocusable(false);
-                king.setClickable(false);
-
-                quard.setText((CharSequence) quar);
-                quard.setFocusable(false);
-                quard.setClickable(false);
-
-                queen.setText((CharSequence)quee);
-                queen.setFocusable(false);
-                queen.setClickable(false);
-
-                roomonly.setText((CharSequence)roomonl);
-                roomonly.setFocusable(false);
-                roomonly.setClickable(false);
-
-                bedandbreackfast.setText((CharSequence)bedandbreackfas);
-                bedandbreackfast.setFocusable(false);
-                bedandbreackfast.setClickable(false);
-
-                fullboard.setText((CharSequence)fullboar);
-                fullboard.setFocusable(false);
-                fullboard.setClickable(false);
-
-                halfboard.setText((CharSequence)halfboar);
-                halfboard.setFocusable(false);
-                halfboard.setClickable(false);
-
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        }
-    }
+        });
 
-    public boolean onCreateOptionsMenu(Menu menu) {
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        Bundle extras = getIntent().getExtras();
+                if (!spinner.getSelectedItem().toString().equals("")) {
 
-        if(extras !=null) {
-            int Value = extras.getInt("id");
-            if(Value>0){
-                getMenuInflater().inflate(R.menu.display_hotel, menu);
-            } else{
-                getMenuInflater().inflate(R.menu.main_manu,menu);
-            }
-        }
-        return true;
-    }
+                    Hotel hotel = new Hotel();
 
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
-        switch(item.getItemId()) {
-            case R.id.Edit_Hotel:
-                Button b = (Button)findViewById(R.id.button);
-                b.setVisibility(View.VISIBLE);
-
-                name.setEnabled(true);
-                name.setFocusableInTouchMode(true);
-                name.setClickable(true);
-
-                address.setEnabled(true);
-                address.setFocusableInTouchMode(true);
-                address.setClickable(true);
-
-                phone.setEnabled(true);
-                phone.setFocusableInTouchMode(true);
-                phone.setClickable(true);
-
-                email.setEnabled(true);
-                email.setFocusableInTouchMode(true);
-                email.setClickable(true);
-
-                starclass.setEnabled(true);
-                starclass.setFocusableInTouchMode(true);
-                starclass.setClickable(true);
-
-                single.setEnabled(true);
-                single.setFocusableInTouchMode(true);
-                single.setClickable(true);
-
-                Double.setEnabled(true);
-                Double.setFocusableInTouchMode(true);
-                Double.setClickable(true);
-
-                triple.setEnabled(true);
-                triple.setFocusableInTouchMode(true);
-                triple.setClickable(true);
-
-                king.setEnabled(true);
-                king.setFocusableInTouchMode(true);
-                king.setClickable(true);
-
-                quard.setEnabled(true);
-                quard.setFocusableInTouchMode(true);
-                quard.setClickable(true);
-
-                queen.setEnabled(true);
-                queen.setFocusableInTouchMode(true);
-                queen.setClickable(true);
-
-                roomonly.setEnabled(true);
-                roomonly.setFocusableInTouchMode(true);
-                roomonly.setClickable(true);
-
-                bedandbreackfast.setEnabled(true);
-                bedandbreackfast.setFocusableInTouchMode(true);
-                bedandbreackfast.setClickable(true);
-
-                fullboard.setEnabled(true);
-                fullboard.setFocusableInTouchMode(true);
-                fullboard.setClickable(true);
-
-                halfboard.setEnabled(true);
-                halfboard.setFocusableInTouchMode(true);
-                halfboard.setClickable(true);
+                    final String uname = address.getText().toString();
+                    final String uaddress = address.getText().toString();
+                    final String uemail = email.getText().toString();
+                    final String uphone = phone.getText().toString();
+                    final String ustarclass = starclass.getText().toString();
+                    final String usingle = single.getText().toString();
+                    final String uDouble = Double.getText().toString();
+                    final String utriple = triple.getText().toString();
+                    final String uking = king.getText().toString();
+                    final String uquard = quard.getText().toString();
+                    final String uqueen = queen.getText().toString();
+                    final String uroomonly = roomonly.getText().toString();
+                    final String ubedandbreackfast = bedandbreackfast.getText().toString();
+                    final String ufullboard = fullboard.getText().toString();
+                    final String uhalfboard = halfboard.getText().toString();
 
 
-                return true;
-            case R.id.Delete_Hotel:
+                    if (db.updateHotel(spinner.getSelectedItem().toString(), uname, uaddress, uemail, uphone,
+                            ustarclass, usingle, uDouble, utriple, uking, uquard,
+                            uqueen, uroomonly, ubedandbreackfast, ufullboard, uhalfboard)) {
+                        Toast.makeText(getApplicationContext(), "Successfully updated !", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error !", Toast.LENGTH_SHORT).show();
+                    }
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(R.string.deleteHotel)
-                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                mydb.deleteHotel(id_To_Update);
-                                Toast.makeText(getApplicationContext(), "Deleted Successfully",
-                                        Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                                startActivity(intent);
-                            }
-                        })
-                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                            }
-                        });
-
-                AlertDialog d = builder.create();
-                d.setTitle("Are you sure");
-                d.show();
-
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
-        }
-    }
-
-    public void run(View view) {
-        Bundle extras = getIntent().getExtras();
-        if(extras !=null) {
-            int Value = extras.getInt("id");
-            if(Value>0){
-                if(mydb.updateHotel(id_To_Update,name.getText().toString(),address.getText().toString(),
-                        phone.getText().toString(), email.getText().toString(),starclass.getText().toString(),single.getText().toString(),Double.getText().toString(),
-                        triple.getText().toString(),king.getText().toString(),quard.getText().toString(),queen.getText().toString(),roomonly.getText().toString(),bedandbreackfast.getText().toString(),fullboard.getText().toString(),halfboard.getText().toString()   )){
-                    Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                } else{
-                    Toast.makeText(getApplicationContext(), "not Updated", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please Select !", Toast.LENGTH_SHORT).show();
                 }
-            } else{
-                if(mydb.insertHotel(name.getText().toString(),address.getText().toString(),
-                        phone.getText().toString(), email.getText().toString(),starclass.getText().toString(),single.getText().toString(),Double.getText().toString(),
-                        triple.getText().toString(),king.getText().toString(),quard.getText().toString(),queen.getText().toString(),roomonly.getText().toString(),bedandbreackfast.getText().toString(),fullboard.getText().toString(),halfboard.getText().toString()     )){
-                    Toast.makeText(getApplicationContext(), "done",
-                            Toast.LENGTH_SHORT).show();
-                } else{
-                    Toast.makeText(getApplicationContext(), "not done",
-                            Toast.LENGTH_SHORT).show();
-                }
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
             }
-        }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!spinner.getSelectedItem().toString().equals("")) {
+
+
+                    if (db.deleteHotel(spinner.getSelectedItem().toString())) {
+                        Toast.makeText(getApplicationContext(), "Successfully deleted !", Toast.LENGTH_SHORT).show();
+                        spinnerClass();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error !", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please Select !", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
+    private void spinnerClass() {
 
+        ArrayList<Hotel> hotels = db.readAllHotels();
+
+        final List<String> listHotels = new ArrayList<String>();
+
+        for (int i = 0; hotels.size() > i; i++) {
+
+            listHotels.add(Integer.toString(hotels.get(i).getID()));
+
+        }
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHotels);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinner.setAdapter(dataAdapter);
+
+    }
 }
+

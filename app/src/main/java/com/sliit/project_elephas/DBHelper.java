@@ -1,133 +1,88 @@
 package com.sliit.project_elephas;
+
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.sliit.project_elephas.sql.Database_hotel;
 
 public class DBHelper extends SQLiteOpenHelper {
 
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "hasinthiDb.db";
 
-    public static final String DATABASE_NAME = "MyDBName.db";
-    public static final String Hotel_TABLE_NAME = "hotel";
-    public static final String Hotel_COLUMN_ID = "id";
-    public static final String Hotel_COLUMN_NAME = "name";
-    public static final String Hotel_COLUMN_Address = "address";
-    public static final String Hotel_COLUMN_EMAIL = "email";
-    public static final String Hotel_COLUMN_PHONE = "phone";
-    public static final String Hotel_COLUMN_STARCLASS = "starclass";
-    public static final String Hotel_COLUMN_SINGLE = "single";
-    public static final String Hotel_COLUMN_DOUBLE= "double";
-    public static final String Hotel_COLUMN_TRIPLE = "triple";
-    public static final String Hotel_COLUMN_KING= "king";
-    public static final String Hotel_COLUMN_QUARD = "quard";
-    public static final String Hotel_COLUMN_QUEEN = "queen";
-    public static final String Hotel_COLUMN_ROOMONLY= "roomonly";
-    public static final String Hotel_COLUMN_BEDANDBREACKFAST = "bedandbreackfast";
-    public static final String Hotel_COLUMN_FULLBOARD= "fullboard";
-    public static final String Hotel_COLUMN_HALFBOARD= "halfboard";
-    private HashMap hp;
+    private static final String SQL_CREATE_ENTRIES =
+            "CREATE TABLE " + Database_hotel.hotelEntry.TABLE_HOTEL + " (" +
+                    Database_hotel.hotelEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_NAME + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_Address + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_EMAIL + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_PHONE + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_STARCLASS + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_SINGLE + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_DOUBLE + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_TRIPLE + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_KING + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_QUARD + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_QUEEN + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_ROOMONLY + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_BEDANDBREACKFAST + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_FULLBOARD + " TEXT," +
+                    Database_hotel.hotelEntry.Hotel_COLUMN_HALFBOARD + " TEXT)";
 
-    public DBHelper(Context context){
-        super(context,DATABASE_NAME,null,1);
+
+    private String DROP_HOTEL_TABLE = "DROP TABLE IF EXISTS " + Database_hotel.hotelEntry.TABLE_HOTEL;
+
+    public DBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(
-                "create table contacts " +
-                        "(id integer primary key, name text,phone text,email text,address text,starclass text, single text, Double text, triple text, king text, quard text, queen text, roomonly text, bedandbreackfast text, fullboard text, halfboard text)"
-        );
+        db.execSQL(SQL_CREATE_ENTRIES);
     }
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS Hotel");
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(DROP_HOTEL_TABLE);
         onCreate(db);
     }
 
-    public boolean insertHotel (String name,String address, String phone, String email, String starclass,String single,String Double,String triple,String king, String quard, String queen, String roomonly, String bedandbreackfast, String fullboard, String halfboard) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("address", address);
-        contentValues.put("phone", phone);
-        contentValues.put("email", email);
-        contentValues.put("starclass", starclass);
-        contentValues.put("single", single);
-        contentValues.put("Double", Double);
-        contentValues.put("triple", triple);
-        contentValues.put("king", king);
-        contentValues.put("quard", quard);
-        contentValues.put("queen", queen);
-        contentValues.put("roomonly", roomonly);
-        contentValues.put("bedandbreackfast", bedandbreackfast);
-        contentValues.put("fullboard", fullboard);
-        contentValues.put("halfboard", halfboard);
 
-        db.insert("hotel", null, contentValues);
+
+
+    public boolean addHotelDetails(Hotel hotel) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_NAME, hotel.getName());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_Address, hotel.getAddress());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_EMAIL, hotel.getEmail());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_PHONE, hotel.getPhone());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_STARCLASS, hotel.getStarclass());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_SINGLE, hotel.getSingle());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_DOUBLE, hotel.getDouble());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_TRIPLE, hotel.getTriple());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_KING, hotel.getKing());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUARD, hotel.getQuard());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_QUEEN, hotel.getQueen());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_ROOMONLY, hotel.getRoomonly());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_BEDANDBREACKFAST, hotel.getBedandbreackfast());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_FULLBOARD, hotel.getFullboard());
+        values.put(Database_hotel.hotelEntry.Hotel_COLUMN_HALFBOARD, hotel.getHalfboard());
+
+
+        long newRowId = db.insert(Database_hotel.hotelEntry.TABLE_HOTEL, null, values);
+
+        db.close();
+
         return true;
+
     }
-
-    public Cursor getData(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
-        return res;
-    }
-
-    public int numberOfRows(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, Hotel_TABLE_NAME);
-        return numRows;
-    }
-
-    public boolean updateHotel (Integer id, String name,String address, String phone, String email,String starclass,String single,String Double,String triple,String king, String quard, String queen, String roomonly, String bedandbreackfast, String fullboard, String halfboard)  {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("address", address);
-        contentValues.put("phone", phone);
-        contentValues.put("email", email);
-        contentValues.put("starclass", starclass);
-        contentValues.put("single", single);
-        contentValues.put("Double", Double);
-        contentValues.put("triple", triple);
-        contentValues.put("king", king);
-        contentValues.put("quard", quard);
-        contentValues.put("queen", queen);
-        contentValues.put("roomonly", roomonly);
-        contentValues.put("bedandbreackfast", bedandbreackfast);
-        contentValues.put("fullboard", fullboard);
-        contentValues.put("halfboard", halfboard);
-
-        db.update("hotel", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
-        return true;
-    }
-
-
-    public Integer deleteHotel (Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("contacts",
-                "id = ? ",
-                new String[] { Integer.toString(id) });
-    }
-
-    public ArrayList<String> getAllViewHotelDetails() {
-        ArrayList<String> array_list = new ArrayList<String>();
-
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from contacts", null );
-        res.moveToFirst();
-
-        while(res.isAfterLast() == false){
-            array_list.add(res.getString(res.getColumnIndex(Hotel_COLUMN_NAME)));
-            res.moveToNext();
-        }
-        return array_list;
-    }
-
 
 }
+
