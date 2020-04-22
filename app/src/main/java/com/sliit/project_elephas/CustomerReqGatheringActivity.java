@@ -25,63 +25,23 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
 
         PASSPORT_NO = getIntent().getExtras().getString("CUSTOMER_PASSPORT_NO");
 
-
-        /*
-        Intent intent = getIntent();
-        int CustomerRequirementID = intent.getIntExtra("CustomerRequirementID", 0);
-        if (CustomerRequirementID != 0) {
-            Button btnUpdate = (Button) findViewById(R.id.button9);
-            btnUpdate.setText("Update");
-
-            Button btnDelete = (Button) findViewById(R.id.button10);
-            btnDelete.setText("Delete");
-
-            //UpdateData();
-            //DeleteData();
-        }
-        */
-
-        //Name = (EditText) findViewById(R.id.editText3);
-        //Nationality = (EditText) findViewById(R.id.editText4);
         NoOfPeople = (EditText) findViewById(R.id.editText5);
         ArrivalDate = (EditText) findViewById(R.id.editText11);
         DepartureDate = (EditText) findViewById(R.id.editText12);
         NoOfDays = (EditText) findViewById(R.id.editText6);
         StarCategory = (EditText) findViewById(R.id.editText7);
         Remarks = (EditText) findViewById(R.id.editText13);
-        btnSave = (Button) findViewById(R.id.button9);
+        btnSave = (Button) findViewById(R.id.btnCustomerReqSave);
         mDatabaseHelper = new DatabaseHelper(this);
 
         AddData();
 
     }
 
-    /*
-    //these methods will not be useful because it is used in cusReqUpdateDeleteActivity
-    public void DeleteData() {
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-    }
-
- //these methods will not be useful because it is used in cusReqUpdateDeleteActivity
-    public void UpdateData(String CustomerRequirementID) {
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-    }
-    */
 
     public void AddData () {
 
-        btnSave = (Button) findViewById(R.id.dubut9);
+        btnSave = (Button) findViewById(R.id.btnCustomerReqSave);
 
         //when save button triggers this method will run
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -120,14 +80,13 @@ public class CustomerReqGatheringActivity extends AppCompatActivity {
 
     private void resetForm() {
         //form fields are set as null / empty
-        Name.setText("");
-        Nationality.getText().toString();
-        NoOfPeople.getText().toString();
-        ArrivalDate.getText().toString();
-        DepartureDate.getText().toString();
-        NoOfDays.getText().toString();
-        StarCategory.getText().toString();
-        Remarks.getText().toString();
+        NoOfPeople.setText("");
+        ArrivalDate.setText("");
+        DepartureDate.setText("");
+        NoOfDays.setText("");
+        StarCategory.setText("");
+        Remarks.setText("");
+
     }
 
 }
