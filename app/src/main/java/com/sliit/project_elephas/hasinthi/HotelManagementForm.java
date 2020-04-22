@@ -56,6 +56,8 @@ public class HotelManagementForm extends AppCompatActivity {
          fullboard = (EditText) findViewById(R.id.editText15);
          halfboard = (EditText) findViewById(R.id.editText14);
 
+        db = new DBHelper(this);
+
         buttonSave = (Button) findViewById(R.id.button);
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
