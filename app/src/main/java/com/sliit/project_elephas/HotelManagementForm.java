@@ -13,6 +13,9 @@ import com.sliit.project_elephas.sql.DBHelper;
 
 public class HotelManagementForm extends AppCompatActivity {
 
+
+
+
     EditText name,
             address,
             email,
@@ -60,7 +63,7 @@ public class HotelManagementForm extends AppCompatActivity {
         buttonSave = (Button) findViewById(R.id.button);
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View v) {
 
 
@@ -87,7 +90,7 @@ public class HotelManagementForm extends AppCompatActivity {
                     boolean isInserted = db.addHotelDetails(hotel);
 
                     if (isInserted) {
-                        Toast.makeText(HotelManagementForm.this, "Payment successful", Toast.LENGTH_LONG).show();
+                        Toast.makeText(HotelManagementForm.this, "Submitted successful", Toast.LENGTH_LONG).show();
 
                         Intent intent = new Intent(HotelManagementForm.this, HotelMangement.class);
                         startActivity(intent);
