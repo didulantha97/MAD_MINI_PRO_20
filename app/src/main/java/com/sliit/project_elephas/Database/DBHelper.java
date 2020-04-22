@@ -79,21 +79,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     //update data
-      public boolean updateData(String packageNo, String packageName,String packageDis,String packagePrice){
-           SQLiteDatabase db = this.getWritableDatabase();
-           ContentValues values = new ContentValues();
+    public boolean updateData(String packageNo, String packageName,String packageDis,String packagePrice){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
-           values.put(CostMaster.Costs.COLUMN_NAME_PackageNo,packageNo);
-           values.put(CostMaster.Costs.COLUMN_NAME_PackageName,packageName);
-           values.put(CostMaster.Costs.COLUMN_NAME_PackageDiscription,packageDis);
-           values.put(CostMaster.Costs.COLUMN_NAME_PackagePrice,packagePrice);
+        values.put(CostMaster.Costs.COLUMN_NAME_PackageNo,packageNo);
+        values.put(CostMaster.Costs.COLUMN_NAME_PackageName,packageName);
+        values.put(CostMaster.Costs.COLUMN_NAME_PackageDiscription,packageDis);
+        values.put(CostMaster.Costs.COLUMN_NAME_PackagePrice,packagePrice);
 
-           db.update(TABLE_NAME,values,"packageNo = ?",new String[]{packageNo});
-           return true;
+        db.update(TABLE_NAME,values,"packageNo = ?",new String[]{packageNo});
+        return true;
 
-       }
+    }
 
-       //delete data
+    //delete data
     public Integer deleteData (String packageNo){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME,"packageNo = ?",new  String[] {packageNo});

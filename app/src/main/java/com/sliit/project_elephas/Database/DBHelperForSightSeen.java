@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import static com.sliit.project_elephas.Database.SightseenMaster.Sightseen.TABLE_NAME_SightseenTabele;
-
 public class DBHelperForSightSeen  extends SQLiteOpenHelper {
 
     //Data base  for sight seen details
