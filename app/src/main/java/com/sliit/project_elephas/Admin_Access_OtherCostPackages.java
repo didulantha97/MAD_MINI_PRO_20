@@ -51,14 +51,14 @@ public class Admin_Access_OtherCostPackages extends AppCompatActivity {
                 String gname = entername.getText().toString();
 
 
-                final String message = "Hello! " + gname +  " Welcome to Elephas App.Only Admins can add new Other Cost details.Others Can not Add data.Only Admins are allowed to add data.If you are admin, you can access the Other Cost details page by clicking this notification.";
+                final String message = "Hello! " + gname +  " Welcome to Elephas App.Only Admins can add new Other Coast details.Do you shuwer you want add data.If yeas press that notification";
                 //Create an explict intent for an Activity in your app
 
                 Intent intent = new Intent(Admin_Access_OtherCostPackages.this,Add_New_Cost.class);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 PendingIntent pendingIntent = PendingIntent.getActivity(Admin_Access_OtherCostPackages.this,0,intent,0);
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(Admin_Access_OtherCostPackages.this,CHANNEL_ID).setSmallIcon(R.drawable.ic_launcher_background).setContentTitle("My notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(Admin_Access_OtherCostPackages.this,CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("Elephas notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
 
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Admin_Access_OtherCostPackages.this);
 

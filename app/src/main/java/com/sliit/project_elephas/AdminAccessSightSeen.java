@@ -51,14 +51,14 @@ public class AdminAccessSightSeen extends AppCompatActivity {
                 String gname = entername.getText().toString();
 
 
-                final String message = "Hello! " + gname +  " Welcome to Elephas App.Only Admins can add new Sight Seen details.Others Can not Add data.Only Admins are allowed to add data.If you are admin, you can access the add sight seen page by clicking this notification.";
+                final String message = "Hello! " + gname +  " Welcome to Elephas App.Only Admins can add new Sight Seen details.Do you shuwer you want add data.If yeas press that notification";
                 //Create an explict intent for an Activity in your app
 
-                //Intent intent = new Intent(AdminAccessSightSeen.this,Add_new_sight.class);
+                Intent intent = new Intent(AdminAccessSightSeen.this,Add_new_sight.class);
 
-                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                PendingIntent pendingIntent = PendingIntent.getActivity(AdminAccessSightSeen.this,0,null,0);
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(AdminAccessSightSeen.this,CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("My notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                PendingIntent pendingIntent = PendingIntent.getActivity(AdminAccessSightSeen.this,0,intent,0);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(AdminAccessSightSeen.this,CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("Elephas notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
 
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(AdminAccessSightSeen.this);
 

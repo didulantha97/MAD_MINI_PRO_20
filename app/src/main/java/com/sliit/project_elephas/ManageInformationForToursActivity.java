@@ -70,7 +70,7 @@ public class ManageInformationForToursActivity extends AppCompatActivity {
         btnAdditionalCostPart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Main_Activity_Dula.class);
+                Intent intent = new Intent(getApplicationContext(),Other_Coast_Details.class);
 //                //intent.putExtra("ADMIN_ID",ADMIN_ID);
 //                intent.putExtra("ADMIN_PASSPORT_NO",ADMIN_PASSPORT_NO);
 //                intent.putExtra("ADMIN_EMAIL",ADMIN_EMAIL);

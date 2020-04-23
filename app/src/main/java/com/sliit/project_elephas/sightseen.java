@@ -56,7 +56,7 @@ public class sightseen extends AppCompatActivity {
 
     public void openActivity1(){
         //Intent intent1 = new Intent(this,AdminAccessSightSeen.class);
-        Intent intent1 = new Intent(this,Add_new_sight.class);
+        Intent intent1 = new Intent(this,AdminAccessSightSeen.class);
         startActivity(intent1);
 
     }
