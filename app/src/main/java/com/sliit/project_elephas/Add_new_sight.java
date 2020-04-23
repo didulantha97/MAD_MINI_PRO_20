@@ -94,7 +94,7 @@ public void onBackPressed(){
                 if(!(sightNo.getText().toString().equals("")||sightName.getText().toString().equals("") || childTicPrice.getText().toString().equals("") || adultTicPrice.getText().toString().equals(""))) {
                     boolean val = sightDB.insertDartaSight(sightNo.getText().toString(), sightName.getText().toString(), childTicPrice.getText().toString(), adultTicPrice.getText().toString());
                         if (val == true)    {
-                                Toast.makeText(Add_new_sight.this, "New sight seen details added successfully.Also Send a notification to you con. ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Add_new_sight.this, "New sight seen details added successfully. ", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         Toast.makeText(Add_new_sight.this, "Data already exists. ", Toast.LENGTH_SHORT).show();
