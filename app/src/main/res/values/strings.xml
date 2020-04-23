@@ -356,5 +356,9 @@
     <string name="yes">Yes</string>
 
     <string name="no">No</string>
+    <string name="dif1">Do you shuwar you want add new data.</string>
+    <string name="dif2">Confirm</string>
+    <string name="dif3">Do you shuwar you want add new sight details</string>
+    <string name="dif4">Confirm</string>
 
 </resources>

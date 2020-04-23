@@ -68,6 +68,8 @@
         android:id="@+id/button13"
         android:layout_width="142dp"
         android:layout_height="46dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginLeft="245dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
@@ -75,7 +77,9 @@
         android:text="@string/next7"
         android:textColor="#111010"
         android:textStyle="bold"
+        app:backgroundTint="@color/bc"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

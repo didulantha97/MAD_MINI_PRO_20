@@ -27,8 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorgreen"
-            android:text="@string/etailscrud" />
+            android:background="@color/bc"
+            android:text="@string/etailscrud"
+            app:backgroundTint="@color/bc" />
 
         <EditText
             android:id="@+id/pno"
@@ -73,31 +74,35 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/colorgreen"
-            android:text="@string/newvewall" />
+            android:text="@string/newvewall"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/add_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorgreen"
-            android:text="@string/anewpackage" />
+            android:background="@color/bc"
+            android:text="@string/anewpackage"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/update_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorgreen"
-            android:text="@string/updatebut3" />
+            android:background="@color/bc"
+            android:text="@string/updatebut3"
+            app:backgroundTint="@color/bc" />
 
         <Button
             android:id="@+id/delete_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorgreen"
-            android:text="@string/deletepackages" />
+            android:background="@color/bc"
+            android:text="@string/deletepackages"
+            app:backgroundTint="@color/bc" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@
         android:onClick="changefragment"
         android:text="@string/package1"
         android:textStyle="bold"
+        app:backgroundTint="@color/bc"
         tools:ignore="OnClick" />
 
     <Button
@@ -23,6 +24,7 @@
         android:onClick="changefragment"
         android:text="@string/pac3"
         android:textStyle="bold"
+        app:backgroundTint="@color/bc"
         tools:ignore="OnClick" />
 
     <Button
@@ -32,6 +34,7 @@
         android:onClick="changefragment"
         android:text="@string/pac2"
         android:textStyle="bold"
+        app:backgroundTint="@color/bc"
         tools:ignore="OnClick" />
 
     <Button
@@ -41,6 +44,7 @@
         android:onClick="changefragment"
         android:text="@string/pac5"
         android:textStyle="bold"
+        app:backgroundTint="@color/bc"
         tools:ignore="OnClick" />
 
     <fragment

@@ -80,4 +80,10 @@ public class ManageInformationForToursActivity extends AppCompatActivity {
             }
         });
     }
+    public void onBackPressed(){
+        Intent intent2 = new Intent(this, AfterLoginActivityAdminView.class);
+        startActivity(intent2);
+        super.onBackPressed();
+        finish();
+    }
 }

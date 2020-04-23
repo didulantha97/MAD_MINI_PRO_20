@@ -37,7 +37,7 @@ public class Other_Coast_Details extends AppCompatActivity {
         });
     }
     public void onBackPressed(){
-        Intent intent2 = new Intent(this, Main_Activity_Dula.class);
+        Intent intent2 = new Intent(this, ManageInformationForToursActivity.class);
         startActivity(intent2);
         super.onBackPressed();
         finish();

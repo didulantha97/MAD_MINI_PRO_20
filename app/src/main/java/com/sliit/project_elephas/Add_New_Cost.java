@@ -121,7 +121,7 @@ public class Add_New_Cost extends AppCompatActivity {
                  Cursor res = costDb.readAllInfo();
                  if (res.getCount() == 0){
                      //show message
-                     showMessage("Error","Nothing found");
+                     showMessage("NO DATA","Nothing found.Enter Data");
                      return;
                  }
                  StringBuffer buffer = new StringBuffer();

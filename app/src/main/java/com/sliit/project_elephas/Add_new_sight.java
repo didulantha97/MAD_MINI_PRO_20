@@ -94,15 +94,15 @@ public void onBackPressed(){
                 if(!(sightNo.getText().toString().equals("")||sightName.getText().toString().equals("") || childTicPrice.getText().toString().equals("") || adultTicPrice.getText().toString().equals(""))) {
                     boolean val = sightDB.insertDartaSight(sightNo.getText().toString(), sightName.getText().toString(), childTicPrice.getText().toString(), adultTicPrice.getText().toString());
                         if (val == true)    {
-                                Toast.makeText(Add_new_sight.this, "New sight seen details added successfully ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Add_new_sight.this, "New sight seen details added successfully.Also Send a notification to you con. ", Toast.LENGTH_SHORT).show();
 
                                 //notification should be triggered here
-                                final String message = "Hello! Welcome to Elephas App.Only Admins can add new Sight Seen details.Others Can not Add data.Only Admins are allowed to add data.If you are admin, you can access the add sight seen page by clicking this notification.";
+                                final String message = "Hello! Welcome to Elephas App.Data added successfully";
 
                                 Intent intent = new Intent(getApplicationContext(), sightseen.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0,intent, 0);
-                                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("My notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
+                                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID).setSmallIcon(R.drawable.elephas_icon).setContentTitle("Elephas Notification").setContentText(message).setPriority(NotificationCompat.PRIORITY_DEFAULT).setContentIntent(pendingIntent).setAutoCancel(true);
 
                                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
 
