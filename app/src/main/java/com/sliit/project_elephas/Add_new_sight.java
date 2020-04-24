@@ -77,8 +77,6 @@ public class Add_new_sight extends AppCompatActivity {
         viewAllSight();
         UpdateDataSight();
         DeleteDataSight();
-
-
     }
 
 public void onBackPressed(){
