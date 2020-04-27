@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bac2"
     tools:context=".Add_new_sight">
 
     <Button
@@ -12,7 +13,7 @@
         android:layout_height="67dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:background="@color/bc"
@@ -27,12 +28,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="133dp"
+        android:layout_width="208dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:text="@string/ansl1"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.418"
@@ -164,11 +165,11 @@
 
     <Button
         android:id="@+id/s_saveButton"
-        android:layout_width="147dp"
-        android:layout_height="69dp"
+        android:layout_width="151dp"
+        android:layout_height="62dp"
         android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:background="@color/bc"
@@ -196,11 +197,11 @@
 
     <Button
         android:id="@+id/s_showButton"
-        android:layout_width="160dp"
-        android:layout_height="78dp"
+        android:layout_width="150dp"
+        android:layout_height="73dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="63dp"
         android:layout_marginRight="63dp"
         android:background="@color/bc"
@@ -219,7 +220,7 @@
         android:layout_height="69dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="65dp"
         android:layout_marginRight="65dp"
         android:background="@color/bc"
@@ -234,11 +235,11 @@
 
     <Button
         android:id="@+id/s_deleteButton"
-        android:layout_width="167dp"
+        android:layout_width="140dp"
         android:layout_height="64dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="@color/bc"
@@ -254,11 +255,11 @@
 
     <Button
         android:id="@+id/back_btn"
-        android:layout_width="148dp"
-        android:layout_height="65dp"
+        android:layout_width="151dp"
+        android:layout_height="67dp"
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:background="@color/bc"

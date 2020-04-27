@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bac7"
     tools:context=".Sight_Seen_Basic_Rule2">
 
     <TextView
