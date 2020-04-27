@@ -82,7 +82,6 @@ public class Add_New_Cost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               int x = 0;
-
                 StringBuffer buffer2 = new StringBuffer();
                 while (x<1){
 
